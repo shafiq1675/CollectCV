@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color: #337ab7 !important; ">
+        <div class="container">
+            <div class="row" style="margin-left:67px;">
+                <div style="float: left;margin: 0px;padding: 3px;">
+                    <img src="~/Images/logo.jpg" height="55px" width="80px" style="border:2px solid #ffffff" />
+                </div>
+                <div style="padding-left:10px;float: left;">
+                    <h3 style="color: #ffffff; font-size: 28px !important;">RSF Application Form</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="margin: 0 auto 0 auto; width: 1000px; padding: 10px; background-color: #F5F5F5;">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - RSF, All Rights Reserved</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

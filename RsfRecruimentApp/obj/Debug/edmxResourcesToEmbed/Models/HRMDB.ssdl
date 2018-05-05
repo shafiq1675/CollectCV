@@ -1,0 +1,356 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RASolarERPModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Common_DistrictInfo">
+    <Key>
+      <PropertyRef Name="DIST_CODE" />
+    </Key>
+    <Property Name="DIST_CODE" Type="nchar" MaxLength="6" Nullable="false" />
+    <Property Name="DIST_NAME" Type="varchar" MaxLength="35" Nullable="false" />
+    <Property Name="DIVI_CODE" Type="nchar" MaxLength="6" />
+    <Property Name="CREATED" Type="datetime" Nullable="false" />
+    <Property Name="MODIFIED" Type="datetime" Nullable="false" />
+    <Property Name="Status" Type="bit" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'RASolarERP.dbo.Common_DivisionInfo' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Common_DivisionInfo">
+    <Key>
+      <PropertyRef Name="DIVI_CODE" />
+    </Key>
+    <Property Name="DIVI_CODE" Type="nchar" MaxLength="6" Nullable="false" />
+    <Property Name="DIVI_NAME" Type="varchar" MaxLength="35" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="20" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="20" />
+    <Property Name="ModifiedOn" Type="datetime" />
+    <Property Name="Status" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="Common_UnionInfo">
+    <Key>
+      <PropertyRef Name="UnionID" />
+    </Key>
+    <Property Name="UnionID" Type="nchar" MaxLength="6" Nullable="false" />
+    <Property Name="UnionName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UpazilaCode" Type="nchar" MaxLength="6" Nullable="false" />
+    <Property Name="IDCOLUnionID" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="IDCOLUnionName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="tinyint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Common_UpazillaInfo">
+    <Key>
+      <PropertyRef Name="UPAZ_CODE" />
+    </Key>
+    <Property Name="UPAZ_CODE" Type="nchar" MaxLength="6" Nullable="false" />
+    <Property Name="UPAZ_NAME" Type="varchar" MaxLength="35" Nullable="false" />
+    <Property Name="DIST_CODE" Type="nchar" MaxLength="6" Nullable="false" />
+    <Property Name="CREATED" Type="datetime" Nullable="false" />
+    <Property Name="MODIFIED" Type="datetime" Nullable="false" />
+    <Property Name="IDCOL_ThanaID" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="IDCOL_ThanaName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="Hrm_BloodGroupInfo">
+    <Key>
+      <PropertyRef Name="BloodGroupID" />
+    </Key>
+    <Property Name="BloodGroupID" Type="nchar" MaxLength="4" Nullable="false" />
+    <Property Name="BloodGroupDescription" Type="nvarchar" MaxLength="50" />
+    <Property Name="SortingOrder" Type="tinyint" />
+    <Property Name="Status" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="Hrm_CandidatesCVBank">
+    <Key>
+      <PropertyRef Name="CandidateID" />
+    </Key>
+    <Property Name="CandidateID" Type="nchar" MaxLength="8" Nullable="false" />
+    <Property Name="CandidateName" Type="nvarchar" MaxLength="50" />
+    <Property Name="CandidateFathersName" Type="nvarchar" MaxLength="50" />
+    <Property Name="CandidateMothersName" Type="nvarchar" MaxLength="50" />
+    <Property Name="DateOfBirth" Type="date" />
+    <Property Name="Gender" Type="nchar" MaxLength="1" />
+    <Property Name="MaritalStatus" Type="nchar" MaxLength="6" />
+    <Property Name="Nationality" Type="nvarchar" MaxLength="20" />
+    <Property Name="Religion" Type="nchar" MaxLength="6" />
+    <Property Name="NationalIDCard" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="EmailID" Type="nvarchar" MaxLength="50" />
+    <Property Name="ApplicationDate" Type="date" />
+    <Property Name="IsAnywhereInBd" Type="bit" />
+    <Property Name="PreferredDepartment" Type="nchar" MaxLength="6" />
+    <Property Name="PreferredDistrictCode" Type="nchar" MaxLength="6" />
+    <Property Name="PreferredDistrictCode1" Type="nchar" MaxLength="6" />
+    <Property Name="PreferredDistrictCode2" Type="nchar" MaxLength="6" />
+    <Property Name="PresentDivisionCode" Type="nchar" MaxLength="6" />
+    <Property Name="PresentDistrictCode" Type="nchar" MaxLength="6" />
+    <Property Name="PresentUpazillaCode" Type="nchar" MaxLength="6" />
+    <Property Name="PresentUnionID" Type="nchar" MaxLength="6" />
+    <Property Name="PresentPoliceStation" Type="nvarchar" MaxLength="50" />
+    <Property Name="PresentPostOffice" Type="nvarchar" MaxLength="50" />
+    <Property Name="PresentStreetOrVillage" Type="nvarchar" MaxLength="50" />
+    <Property Name="PresentHouseNo" Type="nvarchar" MaxLength="10" />
+    <Property Name="PresentMobileNo" Type="nvarchar" MaxLength="11" Nullable="false" />
+    <Property Name="PresentPhone" Type="nvarchar" MaxLength="11" />
+    <Property Name="PermanentDivisionCode" Type="nchar" MaxLength="6" />
+    <Property Name="PermanentDistrictCode" Type="nchar" MaxLength="6" />
+    <Property Name="PermanentUpazillaCode" Type="nchar" MaxLength="6" />
+    <Property Name="PermanentUnionID" Type="nchar" MaxLength="6" />
+    <Property Name="PermanentPoliceStation" Type="nvarchar" MaxLength="50" />
+    <Property Name="PermanentPostOffice" Type="nvarchar" MaxLength="50" />
+    <Property Name="PermanentStreetVillage" Type="nvarchar" MaxLength="50" />
+    <Property Name="PermanentHouseNo" Type="nvarchar" MaxLength="10" />
+    <Property Name="PermanentMobileNo" Type="nvarchar" MaxLength="11" />
+    <Property Name="ComputerSkill_MSWord" Type="bit" />
+    <Property Name="ComputerSkill_MSExcel" Type="bit" />
+    <Property Name="ComputerSkill_MSPPoint" Type="bit" />
+    <Property Name="ComputerSkill_MobileApp" Type="bit" />
+    <Property Name="ComputerSkill_ERP" Type="bit" />
+    <Property Name="ExtracurricularActivities" Type="nvarchar" MaxLength="250" />
+    <Property Name="SourcesOfJobInfo" Type="nchar" MaxLength="50" />
+    <Property Name="AppliedPosition" Type="nvarchar" MaxLength="30" />
+    <Property Name="CareerObjective" Type="nvarchar" MaxLength="400" />
+    <Property Name="ReferenceName1" Type="nvarchar" MaxLength="25" />
+    <Property Name="ReferenceOrgNAddress1" Type="nvarchar" MaxLength="80" />
+    <Property Name="ReferenceDesignation1" Type="nvarchar" MaxLength="25" />
+    <Property Name="ReferenceContactNo1" Type="nvarchar" MaxLength="11" />
+    <Property Name="ReferenceEmail1" Type="nvarchar" MaxLength="50" />
+    <Property Name="ReferenceRelation1" Type="nvarchar" MaxLength="25" />
+    <Property Name="ReferenceName2" Type="nvarchar" MaxLength="25" />
+    <Property Name="ReferenceOrgNAddress2" Type="nvarchar" MaxLength="80" />
+    <Property Name="ReferenceDesignation2" Type="nvarchar" MaxLength="25" />
+    <Property Name="ReferenceContactNo2" Type="nvarchar" MaxLength="11" />
+    <Property Name="ReferenceEmail2" Type="nvarchar" MaxLength="50" />
+    <Property Name="ReferenceRelation2" Type="nvarchar" MaxLength="25" />
+    <Property Name="Photo" Type="image" />
+    <Property Name="TrackingDistrictName" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsRecordsSubmitted" Type="bit" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="20" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="20" />
+    <Property Name="ModifiedOn" Type="datetime" />
+    <Property Name="Status" Type="tinyint" />
+    <Property Name="StatusChangedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Hrm_CandidatesCVBankExtension">
+    <Key>
+      <PropertyRef Name="CandidateID" />
+    </Key>
+    <Property Name="CandidateID" Type="nchar" MaxLength="8" Nullable="false" />
+    <Property Name="DegreeName" Type="nchar" MaxLength="50" />
+    <Property Name="MajorSubject" Type="nchar" MaxLength="6" />
+    <Property Name="Board_University" Type="nchar" MaxLength="50" />
+    <Property Name="InstituteName" Type="nchar" MaxLength="60" />
+    <Property Name="PassingYear" Type="nchar" MaxLength="4" />
+    <Property Name="Grade" Type="nchar" MaxLength="4" />
+    <Property Name="ExamGrade" Type="nchar" MaxLength="1" />
+    <Property Name="Result" Type="nchar" MaxLength="3" />
+    <Property Name="Achievement" Type="nchar" MaxLength="50" />
+    <Property Name="DegreeName1" Type="nchar" MaxLength="50" />
+    <Property Name="MajorSubject1" Type="nchar" MaxLength="6" />
+    <Property Name="Board_University1" Type="nchar" MaxLength="50" />
+    <Property Name="InstituteName1" Type="nchar" MaxLength="60" />
+    <Property Name="PassingYear1" Type="nchar" MaxLength="4" />
+    <Property Name="Grade1" Type="nchar" MaxLength="4" />
+    <Property Name="ExamGrade1" Type="nchar" MaxLength="1" />
+    <Property Name="Result1" Type="nchar" MaxLength="3" />
+    <Property Name="Achievement1" Type="nchar" MaxLength="50" />
+    <Property Name="DegreeName2" Type="nchar" MaxLength="50" />
+    <Property Name="MajorSubject2" Type="nchar" MaxLength="6" />
+    <Property Name="Board_University2" Type="nchar" MaxLength="50" />
+    <Property Name="InstituteName2" Type="nchar" MaxLength="60" />
+    <Property Name="PassingYear2" Type="nchar" MaxLength="4" />
+    <Property Name="Grade2" Type="nchar" MaxLength="4" />
+    <Property Name="ExamGrade2" Type="nchar" MaxLength="1" />
+    <Property Name="Result2" Type="nchar" MaxLength="3" />
+    <Property Name="Achievement2" Type="nchar" MaxLength="50" />
+    <Property Name="DegreeName3" Type="nchar" MaxLength="50" />
+    <Property Name="MajorSubject3" Type="nchar" MaxLength="6" />
+    <Property Name="Board_University3" Type="nchar" MaxLength="50" />
+    <Property Name="InstituteName3" Type="nchar" MaxLength="60" />
+    <Property Name="PassingYear3" Type="nchar" MaxLength="4" />
+    <Property Name="Grade3" Type="nchar" MaxLength="4" />
+    <Property Name="ExamGrade3" Type="nchar" MaxLength="1" />
+    <Property Name="Result3" Type="nchar" MaxLength="3" />
+    <Property Name="Achievement3" Type="nchar" MaxLength="50" />
+    <Property Name="DegreeName4" Type="nchar" MaxLength="50" />
+    <Property Name="MajorSubject4" Type="nchar" MaxLength="6" />
+    <Property Name="Board_University4" Type="nchar" MaxLength="50" />
+    <Property Name="InstituteName4" Type="nchar" MaxLength="60" />
+    <Property Name="PassingYear4" Type="nchar" MaxLength="4" />
+    <Property Name="Grade4" Type="nchar" MaxLength="4" />
+    <Property Name="ExamGrade4" Type="nchar" MaxLength="1" />
+    <Property Name="Result4" Type="nchar" MaxLength="3" />
+    <Property Name="Achievement4" Type="nchar" MaxLength="50" />
+    <Property Name="TrainingName" Type="nchar" MaxLength="60" />
+    <Property Name="TrainingInstituteName" Type="nchar" MaxLength="70" />
+    <Property Name="TrainingInstituteAddress" Type="nchar" MaxLength="70" />
+    <Property Name="TrainingDuration" Type="nvarchar" MaxLength="15" />
+    <Property Name="TrainingYear" Type="nchar" MaxLength="4" />
+    <Property Name="TrainingAchievement" Type="nchar" MaxLength="70" />
+    <Property Name="TrainingName1" Type="nchar" MaxLength="60" />
+    <Property Name="TrainingInstituteName1" Type="nchar" MaxLength="70" />
+    <Property Name="TrainingInstituteAddress1" Type="nchar" MaxLength="70" />
+    <Property Name="TrainingDuration1" Type="nvarchar" MaxLength="15" />
+    <Property Name="TrainingYear1" Type="nchar" MaxLength="4" />
+    <Property Name="TrainingAchievement1" Type="nchar" MaxLength="70" />
+    <Property Name="TrainingName2" Type="nchar" MaxLength="60" />
+    <Property Name="TrainingInstituteName2" Type="nchar" MaxLength="70" />
+    <Property Name="TrainingInstituteAddress2" Type="nchar" MaxLength="70" />
+    <Property Name="TrainingDuration2" Type="nvarchar" MaxLength="15" />
+    <Property Name="TrainingYear2" Type="nchar" MaxLength="4" />
+    <Property Name="TrainingAchievement2" Type="nchar" MaxLength="70" />
+    <Property Name="TrainingName3" Type="nchar" MaxLength="60" />
+    <Property Name="TrainingInstituteName3" Type="nchar" MaxLength="70" />
+    <Property Name="TrainingInstituteAddress3" Type="nchar" MaxLength="70" />
+    <Property Name="TrainingDuration3" Type="nvarchar" MaxLength="15" />
+    <Property Name="TrainingYear3" Type="nchar" MaxLength="4" />
+    <Property Name="TrainingAchievement3" Type="nchar" MaxLength="70" />
+    <Property Name="TrainingName4" Type="nchar" MaxLength="60" />
+    <Property Name="TrainingInstituteName4" Type="nchar" MaxLength="70" />
+    <Property Name="TrainingInstituteAddress4" Type="nchar" MaxLength="70" />
+    <Property Name="TrainingDuration4" Type="nvarchar" MaxLength="15" />
+    <Property Name="TrainingYear4" Type="nchar" MaxLength="4" />
+    <Property Name="TrainingAchievement4" Type="nchar" MaxLength="70" />
+    <Property Name="ExperienceOrganization" Type="nchar" MaxLength="40" />
+    <Property Name="ExperienceOrganizationAddress" Type="nchar" MaxLength="50" />
+    <Property Name="ExperienceDesignation" Type="nchar" MaxLength="30" />
+    <Property Name="ExperienceDepartment" Type="nchar" MaxLength="25" />
+    <Property Name="ExperienceFromDate" Type="date" />
+    <Property Name="ExperienceToDate" Type="date" />
+    <Property Name="ExperienceAchievement" Type="nchar" MaxLength="60" />
+    <Property Name="ExperienceOrganization1" Type="nchar" MaxLength="40" />
+    <Property Name="ExperienceOrganizationAddress1" Type="nchar" MaxLength="50" />
+    <Property Name="ExperienceDesignation1" Type="nchar" MaxLength="30" />
+    <Property Name="ExperienceDepartment1" Type="nchar" MaxLength="25" />
+    <Property Name="ExperienceFromDate1" Type="date" />
+    <Property Name="ExperienceToDate1" Type="date" />
+    <Property Name="ExperienceAchievement1" Type="nchar" MaxLength="60" />
+    <Property Name="ExperienceOrganization2" Type="nchar" MaxLength="40" />
+    <Property Name="ExperienceOrganizationAddress2" Type="nchar" MaxLength="50" />
+    <Property Name="ExperienceDesignation2" Type="nchar" MaxLength="30" />
+    <Property Name="ExperienceDepartment2" Type="nchar" MaxLength="25" />
+    <Property Name="ExperienceFromDate2" Type="date" />
+    <Property Name="ExperienceToDate2" Type="date" />
+    <Property Name="ExperienceAchievement2" Type="nchar" MaxLength="60" />
+    <Property Name="ExperienceOrganization3" Type="nchar" MaxLength="40" />
+    <Property Name="ExperienceOrganizationAddress3" Type="nchar" MaxLength="50" />
+    <Property Name="ExperienceDesignation3" Type="nchar" MaxLength="30" />
+    <Property Name="ExperienceDepartment3" Type="nchar" MaxLength="25" />
+    <Property Name="ExperienceFromDate3" Type="date" />
+    <Property Name="ExperienceToDate3" Type="date" />
+    <Property Name="ExperienceAchievement3" Type="nchar" MaxLength="60" />
+    <Property Name="ExperienceOrganization4" Type="nchar" MaxLength="40" />
+    <Property Name="ExperienceOrganizationAddress4" Type="nchar" MaxLength="50" />
+    <Property Name="ExperienceDesignation4" Type="nchar" MaxLength="30" />
+    <Property Name="ExperienceDepartment4" Type="nchar" MaxLength="25" />
+    <Property Name="ExperienceFromDate4" Type="date" />
+    <Property Name="ExperienceToDate4" Type="date" />
+    <Property Name="ExperienceAchievement4" Type="nchar" MaxLength="60" />
+  </EntityType>
+  <EntityType Name="Hrm_EducationInfo">
+    <Key>
+      <PropertyRef Name="EducationID" />
+    </Key>
+    <Property Name="EducationID" Type="nchar" MaxLength="6" Nullable="false" />
+    <Property Name="EducationName" Type="nvarchar" MaxLength="50" />
+    <Property Name="EducationLevel" Type="nvarchar" MaxLength="20" />
+    <Property Name="SortingOrder" Type="tinyint" />
+    <Property Name="Status" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="Hrm_MajorSubject">
+    <Key>
+      <PropertyRef Name="MajorSubjectID" />
+    </Key>
+    <Property Name="MajorSubjectID" Type="nchar" MaxLength="6" Nullable="false" />
+    <Property Name="MajorSubjectName" Type="nvarchar" MaxLength="60" />
+    <Property Name="SortingOrder" Type="tinyint" />
+    <Property Name="Status" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="Hrm_MaritalStatusInfo">
+    <Key>
+      <PropertyRef Name="MaritalStatusID" />
+    </Key>
+    <Property Name="MaritalStatusID" Type="nchar" MaxLength="6" Nullable="false" />
+    <Property Name="MaritalStatusDescription" Type="nvarchar" MaxLength="50" />
+    <Property Name="SortingOrder" Type="tinyint" />
+    <Property Name="Status" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="Hrm_ReligionInfo">
+    <Key>
+      <PropertyRef Name="ReligionID" />
+    </Key>
+    <Property Name="ReligionID" Type="nchar" MaxLength="6" Nullable="false" />
+    <Property Name="ReligionName" Type="nvarchar" MaxLength="50" />
+    <Property Name="SortingOrder" Type="tinyint" />
+    <Property Name="Status" Type="tinyint" />
+  </EntityType>
+  <Association Name="FK_Hrm_CandidatesCVBankExtension_Hrm_CandidatesCVBank">
+    <End Role="Hrm_CandidatesCVBank" Type="Self.Hrm_CandidatesCVBank" Multiplicity="1" />
+    <End Role="Hrm_CandidatesCVBankExtension" Type="Self.Hrm_CandidatesCVBankExtension" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Hrm_CandidatesCVBank">
+        <PropertyRef Name="CandidateID" />
+      </Principal>
+      <Dependent Role="Hrm_CandidatesCVBankExtension">
+        <PropertyRef Name="CandidateID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_upazilla_tbl_district">
+    <End Role="Common_DistrictInfo" Type="Self.Common_DistrictInfo" Multiplicity="1" />
+    <End Role="Common_UpazillaInfo" Type="Self.Common_UpazillaInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Common_DistrictInfo">
+        <PropertyRef Name="DIST_CODE" />
+      </Principal>
+      <Dependent Role="Common_UpazillaInfo">
+        <PropertyRef Name="DIST_CODE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UnionInfo_tbl_Upazilla">
+    <End Role="Common_UpazillaInfo" Type="Self.Common_UpazillaInfo" Multiplicity="1" />
+    <End Role="Common_UnionInfo" Type="Self.Common_UnionInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Common_UpazillaInfo">
+        <PropertyRef Name="UPAZ_CODE" />
+      </Principal>
+      <Dependent Role="Common_UnionInfo">
+        <PropertyRef Name="UpazilaCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="RASolarERPModelStoreContainer">
+    <EntitySet Name="Common_DistrictInfo" EntityType="Self.Common_DistrictInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Common_UnionInfo" EntityType="Self.Common_UnionInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Common_UpazillaInfo" EntityType="Self.Common_UpazillaInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Hrm_BloodGroupInfo" EntityType="Self.Hrm_BloodGroupInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Hrm_CandidatesCVBank" EntityType="Self.Hrm_CandidatesCVBank" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Hrm_CandidatesCVBankExtension" EntityType="Self.Hrm_CandidatesCVBankExtension" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Hrm_EducationInfo" EntityType="Self.Hrm_EducationInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Hrm_MajorSubject" EntityType="Self.Hrm_MajorSubject" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Hrm_MaritalStatusInfo" EntityType="Self.Hrm_MaritalStatusInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Hrm_ReligionInfo" EntityType="Self.Hrm_ReligionInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Common_DivisionInfo" EntityType="Self.Common_DivisionInfo" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[Common_DivisionInfo].[DIVI_CODE] AS [DIVI_CODE], 
+[Common_DivisionInfo].[DIVI_NAME] AS [DIVI_NAME], 
+[Common_DivisionInfo].[CreatedBy] AS [CreatedBy], 
+[Common_DivisionInfo].[CreatedOn] AS [CreatedOn], 
+[Common_DivisionInfo].[ModifiedBy] AS [ModifiedBy], 
+[Common_DivisionInfo].[ModifiedOn] AS [ModifiedOn], 
+[Common_DivisionInfo].[Status] AS [Status]
+FROM [dbo].[Common_DivisionInfo] AS [Common_DivisionInfo]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_Hrm_CandidatesCVBankExtension_Hrm_CandidatesCVBank" Association="Self.FK_Hrm_CandidatesCVBankExtension_Hrm_CandidatesCVBank">
+      <End Role="Hrm_CandidatesCVBank" EntitySet="Hrm_CandidatesCVBank" />
+      <End Role="Hrm_CandidatesCVBankExtension" EntitySet="Hrm_CandidatesCVBankExtension" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_upazilla_tbl_district" Association="Self.FK_tbl_upazilla_tbl_district">
+      <End Role="Common_DistrictInfo" EntitySet="Common_DistrictInfo" />
+      <End Role="Common_UpazillaInfo" EntitySet="Common_UpazillaInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UnionInfo_tbl_Upazilla" Association="Self.FK_UnionInfo_tbl_Upazilla">
+      <End Role="Common_UpazillaInfo" EntitySet="Common_UpazillaInfo" />
+      <End Role="Common_UnionInfo" EntitySet="Common_UnionInfo" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

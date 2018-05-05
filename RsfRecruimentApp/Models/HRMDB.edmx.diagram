@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="334b4ff1633b4e549e76a4740c379ad4" Name="Diagram1" ZoomLevel="77">
+        <EntityTypeShape EntityType="RASolarERPModel.Common_DistrictInfo" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="RASolarERPModel.Common_UpazillaInfo" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="RASolarERPModel.Common_DivisionInfo" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <AssociationConnector Association="RASolarERPModel.FK_tbl_upazilla_tbl_district" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="RASolarERPModel.Hrm_EducationInfo" Width="2.125" PointX="6.875" PointY="0.75" />
+        <EntityTypeShape EntityType="RASolarERPModel.Hrm_MajorSubject" Width="2.125" PointX="6.875" PointY="3.75" />
+        <EntityTypeShape EntityType="RASolarERPModel.Hrm_MaritalStatusInfo" Width="2.125" PointX="6.875" PointY="6.75" />
+        <EntityTypeShape EntityType="RASolarERPModel.Hrm_ReligionInfo" Width="2.125" PointX="10.5" PointY="0.75" />
+        <EntityTypeShape EntityType="RASolarERPModel.Hrm_BloodGroupInfo" Width="1.5" PointX="0.625" PointY="8" />
+        <EntityTypeShape EntityType="RASolarERPModel.Common_UnionInfo" Width="1.5" PointX="3.625" PointY="5.75" />
+        <AssociationConnector Association="RASolarERPModel.FK_UnionInfo_tbl_Upazilla" />
+        <EntityTypeShape EntityType="RASolarERPModel.Hrm_CandidatesCVBank" Width="1.5" PointX="11.875" PointY="5.25" />
+        <EntityTypeShape EntityType="RASolarERPModel.Hrm_CandidatesCVBankExtension" Width="1.5" PointX="14.125" PointY="0.875" />
+        <AssociationConnector Association="RASolarERPModel.FK_Hrm_CandidatesCVBankExtension_Hrm_CandidatesCVBank" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

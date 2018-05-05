@@ -1,0 +1,296 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="RASolarERPModelStoreContainer" CdmEntityContainer="RASolarERPEntities">
+    <EntitySetMapping Name="Common_DistrictInfo">
+      <EntityTypeMapping TypeName="RASolarERPModel.Common_DistrictInfo">
+        <MappingFragment StoreEntitySet="Common_DistrictInfo">
+          <ScalarProperty Name="DIST_CODE" ColumnName="DIST_CODE" />
+          <ScalarProperty Name="DIST_NAME" ColumnName="DIST_NAME" />
+          <ScalarProperty Name="DIVI_CODE" ColumnName="DIVI_CODE" />
+          <ScalarProperty Name="CREATED" ColumnName="CREATED" />
+          <ScalarProperty Name="MODIFIED" ColumnName="MODIFIED" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Common_UpazillaInfo">
+      <EntityTypeMapping TypeName="RASolarERPModel.Common_UpazillaInfo">
+        <MappingFragment StoreEntitySet="Common_UpazillaInfo">
+          <ScalarProperty Name="UPAZ_CODE" ColumnName="UPAZ_CODE" />
+          <ScalarProperty Name="UPAZ_NAME" ColumnName="UPAZ_NAME" />
+          <ScalarProperty Name="DIST_CODE" ColumnName="DIST_CODE" />
+          <ScalarProperty Name="CREATED" ColumnName="CREATED" />
+          <ScalarProperty Name="MODIFIED" ColumnName="MODIFIED" />
+          <ScalarProperty Name="IDCOL_ThanaID" ColumnName="IDCOL_ThanaID" />
+          <ScalarProperty Name="IDCOL_ThanaName" ColumnName="IDCOL_ThanaName" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Common_DivisionInfo">
+      <EntityTypeMapping TypeName="RASolarERPModel.Common_DivisionInfo">
+        <MappingFragment StoreEntitySet="Common_DivisionInfo">
+          <ScalarProperty Name="DIVI_CODE" ColumnName="DIVI_CODE" />
+          <ScalarProperty Name="DIVI_NAME" ColumnName="DIVI_NAME" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hrm_EducationInfo">
+      <EntityTypeMapping TypeName="RASolarERPModel.Hrm_EducationInfo">
+        <MappingFragment StoreEntitySet="Hrm_EducationInfo">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="SortingOrder" ColumnName="SortingOrder" />
+          <ScalarProperty Name="EducationLevel" ColumnName="EducationLevel" />
+          <ScalarProperty Name="EducationName" ColumnName="EducationName" />
+          <ScalarProperty Name="EducationID" ColumnName="EducationID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hrm_MajorSubject">
+      <EntityTypeMapping TypeName="RASolarERPModel.Hrm_MajorSubject">
+        <MappingFragment StoreEntitySet="Hrm_MajorSubject">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="SortingOrder" ColumnName="SortingOrder" />
+          <ScalarProperty Name="MajorSubjectName" ColumnName="MajorSubjectName" />
+          <ScalarProperty Name="MajorSubjectID" ColumnName="MajorSubjectID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hrm_MaritalStatusInfo">
+      <EntityTypeMapping TypeName="RASolarERPModel.Hrm_MaritalStatusInfo">
+        <MappingFragment StoreEntitySet="Hrm_MaritalStatusInfo">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="SortingOrder" ColumnName="SortingOrder" />
+          <ScalarProperty Name="MaritalStatusDescription" ColumnName="MaritalStatusDescription" />
+          <ScalarProperty Name="MaritalStatusID" ColumnName="MaritalStatusID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hrm_ReligionInfo">
+      <EntityTypeMapping TypeName="RASolarERPModel.Hrm_ReligionInfo">
+        <MappingFragment StoreEntitySet="Hrm_ReligionInfo">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="SortingOrder" ColumnName="SortingOrder" />
+          <ScalarProperty Name="ReligionName" ColumnName="ReligionName" />
+          <ScalarProperty Name="ReligionID" ColumnName="ReligionID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hrm_BloodGroupInfo">
+      <EntityTypeMapping TypeName="RASolarERPModel.Hrm_BloodGroupInfo">
+        <MappingFragment StoreEntitySet="Hrm_BloodGroupInfo">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="SortingOrder" ColumnName="SortingOrder" />
+          <ScalarProperty Name="BloodGroupDescription" ColumnName="BloodGroupDescription" />
+          <ScalarProperty Name="BloodGroupID" ColumnName="BloodGroupID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Common_UnionInfo">
+      <EntityTypeMapping TypeName="RASolarERPModel.Common_UnionInfo">
+        <MappingFragment StoreEntitySet="Common_UnionInfo">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="IDCOLUnionName" ColumnName="IDCOLUnionName" />
+          <ScalarProperty Name="IDCOLUnionID" ColumnName="IDCOLUnionID" />
+          <ScalarProperty Name="UpazilaCode" ColumnName="UpazilaCode" />
+          <ScalarProperty Name="UnionName" ColumnName="UnionName" />
+          <ScalarProperty Name="UnionID" ColumnName="UnionID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hrm_CandidatesCVBank">
+      <EntityTypeMapping TypeName="RASolarERPModel.Hrm_CandidatesCVBank">
+        <MappingFragment StoreEntitySet="Hrm_CandidatesCVBank">
+          <ScalarProperty Name="TrackingDistrictName" ColumnName="TrackingDistrictName" />
+          <ScalarProperty Name="StatusChangedDate" ColumnName="StatusChangedDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="IsRecordsSubmitted" ColumnName="IsRecordsSubmitted" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="ReferenceRelation2" ColumnName="ReferenceRelation2" />
+          <ScalarProperty Name="ReferenceEmail2" ColumnName="ReferenceEmail2" />
+          <ScalarProperty Name="ReferenceContactNo2" ColumnName="ReferenceContactNo2" />
+          <ScalarProperty Name="ReferenceDesignation2" ColumnName="ReferenceDesignation2" />
+          <ScalarProperty Name="ReferenceOrgNAddress2" ColumnName="ReferenceOrgNAddress2" />
+          <ScalarProperty Name="ReferenceName2" ColumnName="ReferenceName2" />
+          <ScalarProperty Name="ReferenceRelation1" ColumnName="ReferenceRelation1" />
+          <ScalarProperty Name="ReferenceEmail1" ColumnName="ReferenceEmail1" />
+          <ScalarProperty Name="ReferenceContactNo1" ColumnName="ReferenceContactNo1" />
+          <ScalarProperty Name="ReferenceDesignation1" ColumnName="ReferenceDesignation1" />
+          <ScalarProperty Name="ReferenceOrgNAddress1" ColumnName="ReferenceOrgNAddress1" />
+          <ScalarProperty Name="ReferenceName1" ColumnName="ReferenceName1" />
+          <ScalarProperty Name="CareerObjective" ColumnName="CareerObjective" />
+          <ScalarProperty Name="AppliedPosition" ColumnName="AppliedPosition" />
+          <ScalarProperty Name="SourcesOfJobInfo" ColumnName="SourcesOfJobInfo" />
+          <ScalarProperty Name="ExtracurricularActivities" ColumnName="ExtracurricularActivities" />
+          <ScalarProperty Name="ComputerSkill_ERP" ColumnName="ComputerSkill_ERP" />
+          <ScalarProperty Name="ComputerSkill_MobileApp" ColumnName="ComputerSkill_MobileApp" />
+          <ScalarProperty Name="ComputerSkill_MSPPoint" ColumnName="ComputerSkill_MSPPoint" />
+          <ScalarProperty Name="ComputerSkill_MSExcel" ColumnName="ComputerSkill_MSExcel" />
+          <ScalarProperty Name="ComputerSkill_MSWord" ColumnName="ComputerSkill_MSWord" />
+          <ScalarProperty Name="PermanentMobileNo" ColumnName="PermanentMobileNo" />
+          <ScalarProperty Name="PermanentHouseNo" ColumnName="PermanentHouseNo" />
+          <ScalarProperty Name="PermanentStreetVillage" ColumnName="PermanentStreetVillage" />
+          <ScalarProperty Name="PermanentPostOffice" ColumnName="PermanentPostOffice" />
+          <ScalarProperty Name="PermanentPoliceStation" ColumnName="PermanentPoliceStation" />
+          <ScalarProperty Name="PermanentUnionID" ColumnName="PermanentUnionID" />
+          <ScalarProperty Name="PermanentUpazillaCode" ColumnName="PermanentUpazillaCode" />
+          <ScalarProperty Name="PermanentDistrictCode" ColumnName="PermanentDistrictCode" />
+          <ScalarProperty Name="PermanentDivisionCode" ColumnName="PermanentDivisionCode" />
+          <ScalarProperty Name="PresentPhone" ColumnName="PresentPhone" />
+          <ScalarProperty Name="PresentMobileNo" ColumnName="PresentMobileNo" />
+          <ScalarProperty Name="PresentHouseNo" ColumnName="PresentHouseNo" />
+          <ScalarProperty Name="PresentStreetOrVillage" ColumnName="PresentStreetOrVillage" />
+          <ScalarProperty Name="PresentPostOffice" ColumnName="PresentPostOffice" />
+          <ScalarProperty Name="PresentPoliceStation" ColumnName="PresentPoliceStation" />
+          <ScalarProperty Name="PresentUnionID" ColumnName="PresentUnionID" />
+          <ScalarProperty Name="PresentUpazillaCode" ColumnName="PresentUpazillaCode" />
+          <ScalarProperty Name="PresentDistrictCode" ColumnName="PresentDistrictCode" />
+          <ScalarProperty Name="PresentDivisionCode" ColumnName="PresentDivisionCode" />
+          <ScalarProperty Name="PreferredDistrictCode2" ColumnName="PreferredDistrictCode2" />
+          <ScalarProperty Name="PreferredDistrictCode1" ColumnName="PreferredDistrictCode1" />
+          <ScalarProperty Name="PreferredDistrictCode" ColumnName="PreferredDistrictCode" />
+          <ScalarProperty Name="PreferredDepartment" ColumnName="PreferredDepartment" />
+          <ScalarProperty Name="IsAnywhereInBd" ColumnName="IsAnywhereInBd" />
+          <ScalarProperty Name="ApplicationDate" ColumnName="ApplicationDate" />
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="NationalIDCard" ColumnName="NationalIDCard" />
+          <ScalarProperty Name="Religion" ColumnName="Religion" />
+          <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+          <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="CandidateMothersName" ColumnName="CandidateMothersName" />
+          <ScalarProperty Name="CandidateFathersName" ColumnName="CandidateFathersName" />
+          <ScalarProperty Name="CandidateName" ColumnName="CandidateName" />
+          <ScalarProperty Name="CandidateID" ColumnName="CandidateID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hrm_CandidatesCVBankExtension">
+      <EntityTypeMapping TypeName="RASolarERPModel.Hrm_CandidatesCVBankExtension">
+        <MappingFragment StoreEntitySet="Hrm_CandidatesCVBankExtension">
+          <ScalarProperty Name="ExperienceAchievement4" ColumnName="ExperienceAchievement4" />
+          <ScalarProperty Name="ExperienceToDate4" ColumnName="ExperienceToDate4" />
+          <ScalarProperty Name="ExperienceFromDate4" ColumnName="ExperienceFromDate4" />
+          <ScalarProperty Name="ExperienceDepartment4" ColumnName="ExperienceDepartment4" />
+          <ScalarProperty Name="ExperienceDesignation4" ColumnName="ExperienceDesignation4" />
+          <ScalarProperty Name="ExperienceOrganizationAddress4" ColumnName="ExperienceOrganizationAddress4" />
+          <ScalarProperty Name="ExperienceOrganization4" ColumnName="ExperienceOrganization4" />
+          <ScalarProperty Name="ExperienceAchievement3" ColumnName="ExperienceAchievement3" />
+          <ScalarProperty Name="ExperienceToDate3" ColumnName="ExperienceToDate3" />
+          <ScalarProperty Name="ExperienceFromDate3" ColumnName="ExperienceFromDate3" />
+          <ScalarProperty Name="ExperienceDepartment3" ColumnName="ExperienceDepartment3" />
+          <ScalarProperty Name="ExperienceDesignation3" ColumnName="ExperienceDesignation3" />
+          <ScalarProperty Name="ExperienceOrganizationAddress3" ColumnName="ExperienceOrganizationAddress3" />
+          <ScalarProperty Name="ExperienceOrganization3" ColumnName="ExperienceOrganization3" />
+          <ScalarProperty Name="ExperienceAchievement2" ColumnName="ExperienceAchievement2" />
+          <ScalarProperty Name="ExperienceToDate2" ColumnName="ExperienceToDate2" />
+          <ScalarProperty Name="ExperienceFromDate2" ColumnName="ExperienceFromDate2" />
+          <ScalarProperty Name="ExperienceDepartment2" ColumnName="ExperienceDepartment2" />
+          <ScalarProperty Name="ExperienceDesignation2" ColumnName="ExperienceDesignation2" />
+          <ScalarProperty Name="ExperienceOrganizationAddress2" ColumnName="ExperienceOrganizationAddress2" />
+          <ScalarProperty Name="ExperienceOrganization2" ColumnName="ExperienceOrganization2" />
+          <ScalarProperty Name="ExperienceAchievement1" ColumnName="ExperienceAchievement1" />
+          <ScalarProperty Name="ExperienceToDate1" ColumnName="ExperienceToDate1" />
+          <ScalarProperty Name="ExperienceFromDate1" ColumnName="ExperienceFromDate1" />
+          <ScalarProperty Name="ExperienceDepartment1" ColumnName="ExperienceDepartment1" />
+          <ScalarProperty Name="ExperienceDesignation1" ColumnName="ExperienceDesignation1" />
+          <ScalarProperty Name="ExperienceOrganizationAddress1" ColumnName="ExperienceOrganizationAddress1" />
+          <ScalarProperty Name="ExperienceOrganization1" ColumnName="ExperienceOrganization1" />
+          <ScalarProperty Name="ExperienceAchievement" ColumnName="ExperienceAchievement" />
+          <ScalarProperty Name="ExperienceToDate" ColumnName="ExperienceToDate" />
+          <ScalarProperty Name="ExperienceFromDate" ColumnName="ExperienceFromDate" />
+          <ScalarProperty Name="ExperienceDepartment" ColumnName="ExperienceDepartment" />
+          <ScalarProperty Name="ExperienceDesignation" ColumnName="ExperienceDesignation" />
+          <ScalarProperty Name="ExperienceOrganizationAddress" ColumnName="ExperienceOrganizationAddress" />
+          <ScalarProperty Name="ExperienceOrganization" ColumnName="ExperienceOrganization" />
+          <ScalarProperty Name="TrainingAchievement4" ColumnName="TrainingAchievement4" />
+          <ScalarProperty Name="TrainingYear4" ColumnName="TrainingYear4" />
+          <ScalarProperty Name="TrainingDuration4" ColumnName="TrainingDuration4" />
+          <ScalarProperty Name="TrainingInstituteAddress4" ColumnName="TrainingInstituteAddress4" />
+          <ScalarProperty Name="TrainingInstituteName4" ColumnName="TrainingInstituteName4" />
+          <ScalarProperty Name="TrainingName4" ColumnName="TrainingName4" />
+          <ScalarProperty Name="TrainingAchievement3" ColumnName="TrainingAchievement3" />
+          <ScalarProperty Name="TrainingYear3" ColumnName="TrainingYear3" />
+          <ScalarProperty Name="TrainingDuration3" ColumnName="TrainingDuration3" />
+          <ScalarProperty Name="TrainingInstituteAddress3" ColumnName="TrainingInstituteAddress3" />
+          <ScalarProperty Name="TrainingInstituteName3" ColumnName="TrainingInstituteName3" />
+          <ScalarProperty Name="TrainingName3" ColumnName="TrainingName3" />
+          <ScalarProperty Name="TrainingAchievement2" ColumnName="TrainingAchievement2" />
+          <ScalarProperty Name="TrainingYear2" ColumnName="TrainingYear2" />
+          <ScalarProperty Name="TrainingDuration2" ColumnName="TrainingDuration2" />
+          <ScalarProperty Name="TrainingInstituteAddress2" ColumnName="TrainingInstituteAddress2" />
+          <ScalarProperty Name="TrainingInstituteName2" ColumnName="TrainingInstituteName2" />
+          <ScalarProperty Name="TrainingName2" ColumnName="TrainingName2" />
+          <ScalarProperty Name="TrainingAchievement1" ColumnName="TrainingAchievement1" />
+          <ScalarProperty Name="TrainingYear1" ColumnName="TrainingYear1" />
+          <ScalarProperty Name="TrainingDuration1" ColumnName="TrainingDuration1" />
+          <ScalarProperty Name="TrainingInstituteAddress1" ColumnName="TrainingInstituteAddress1" />
+          <ScalarProperty Name="TrainingInstituteName1" ColumnName="TrainingInstituteName1" />
+          <ScalarProperty Name="TrainingName1" ColumnName="TrainingName1" />
+          <ScalarProperty Name="TrainingAchievement" ColumnName="TrainingAchievement" />
+          <ScalarProperty Name="TrainingYear" ColumnName="TrainingYear" />
+          <ScalarProperty Name="TrainingDuration" ColumnName="TrainingDuration" />
+          <ScalarProperty Name="TrainingInstituteAddress" ColumnName="TrainingInstituteAddress" />
+          <ScalarProperty Name="TrainingInstituteName" ColumnName="TrainingInstituteName" />
+          <ScalarProperty Name="TrainingName" ColumnName="TrainingName" />
+          <ScalarProperty Name="Achievement4" ColumnName="Achievement4" />
+          <ScalarProperty Name="Result4" ColumnName="Result4" />
+          <ScalarProperty Name="ExamGrade4" ColumnName="ExamGrade4" />
+          <ScalarProperty Name="Grade4" ColumnName="Grade4" />
+          <ScalarProperty Name="PassingYear4" ColumnName="PassingYear4" />
+          <ScalarProperty Name="InstituteName4" ColumnName="InstituteName4" />
+          <ScalarProperty Name="Board_University4" ColumnName="Board_University4" />
+          <ScalarProperty Name="MajorSubject4" ColumnName="MajorSubject4" />
+          <ScalarProperty Name="DegreeName4" ColumnName="DegreeName4" />
+          <ScalarProperty Name="Achievement3" ColumnName="Achievement3" />
+          <ScalarProperty Name="Result3" ColumnName="Result3" />
+          <ScalarProperty Name="ExamGrade3" ColumnName="ExamGrade3" />
+          <ScalarProperty Name="Grade3" ColumnName="Grade3" />
+          <ScalarProperty Name="PassingYear3" ColumnName="PassingYear3" />
+          <ScalarProperty Name="InstituteName3" ColumnName="InstituteName3" />
+          <ScalarProperty Name="Board_University3" ColumnName="Board_University3" />
+          <ScalarProperty Name="MajorSubject3" ColumnName="MajorSubject3" />
+          <ScalarProperty Name="DegreeName3" ColumnName="DegreeName3" />
+          <ScalarProperty Name="Achievement2" ColumnName="Achievement2" />
+          <ScalarProperty Name="Result2" ColumnName="Result2" />
+          <ScalarProperty Name="ExamGrade2" ColumnName="ExamGrade2" />
+          <ScalarProperty Name="Grade2" ColumnName="Grade2" />
+          <ScalarProperty Name="PassingYear2" ColumnName="PassingYear2" />
+          <ScalarProperty Name="InstituteName2" ColumnName="InstituteName2" />
+          <ScalarProperty Name="Board_University2" ColumnName="Board_University2" />
+          <ScalarProperty Name="MajorSubject2" ColumnName="MajorSubject2" />
+          <ScalarProperty Name="DegreeName2" ColumnName="DegreeName2" />
+          <ScalarProperty Name="Achievement1" ColumnName="Achievement1" />
+          <ScalarProperty Name="Result1" ColumnName="Result1" />
+          <ScalarProperty Name="ExamGrade1" ColumnName="ExamGrade1" />
+          <ScalarProperty Name="Grade1" ColumnName="Grade1" />
+          <ScalarProperty Name="PassingYear1" ColumnName="PassingYear1" />
+          <ScalarProperty Name="InstituteName1" ColumnName="InstituteName1" />
+          <ScalarProperty Name="Board_University1" ColumnName="Board_University1" />
+          <ScalarProperty Name="MajorSubject1" ColumnName="MajorSubject1" />
+          <ScalarProperty Name="DegreeName1" ColumnName="DegreeName1" />
+          <ScalarProperty Name="Achievement" ColumnName="Achievement" />
+          <ScalarProperty Name="Result" ColumnName="Result" />
+          <ScalarProperty Name="ExamGrade" ColumnName="ExamGrade" />
+          <ScalarProperty Name="Grade" ColumnName="Grade" />
+          <ScalarProperty Name="PassingYear" ColumnName="PassingYear" />
+          <ScalarProperty Name="InstituteName" ColumnName="InstituteName" />
+          <ScalarProperty Name="Board_University" ColumnName="Board_University" />
+          <ScalarProperty Name="MajorSubject" ColumnName="MajorSubject" />
+          <ScalarProperty Name="DegreeName" ColumnName="DegreeName" />
+          <ScalarProperty Name="CandidateID" ColumnName="CandidateID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

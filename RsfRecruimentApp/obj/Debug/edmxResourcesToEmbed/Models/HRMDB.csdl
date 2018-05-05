@@ -1,0 +1,350 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RASolarERPModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Common_DistrictInfo">
+    <Key>
+      <PropertyRef Name="DIST_CODE" />
+    </Key>
+    <Property Name="DIST_CODE" Type="String" MaxLength="6" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="DIST_NAME" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DIVI_CODE" Type="String" MaxLength="6" FixedLength="true" Unicode="true" />
+    <Property Name="CREATED" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MODIFIED" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Status" Type="Boolean" />
+    <NavigationProperty Name="Common_UpazillaInfo" Relationship="Self.FK_tbl_upazilla_tbl_district" FromRole="Common_DistrictInfo" ToRole="Common_UpazillaInfo" />
+  </EntityType>
+  <EntityType Name="Common_UpazillaInfo">
+    <Key>
+      <PropertyRef Name="UPAZ_CODE" />
+    </Key>
+    <Property Name="UPAZ_CODE" Type="String" MaxLength="6" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="UPAZ_NAME" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DIST_CODE" Type="String" MaxLength="6" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="CREATED" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MODIFIED" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IDCOL_ThanaID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="IDCOL_ThanaName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Byte" />
+    <NavigationProperty Name="Common_DistrictInfo" Relationship="Self.FK_tbl_upazilla_tbl_district" FromRole="Common_UpazillaInfo" ToRole="Common_DistrictInfo" />
+    <NavigationProperty Name="Common_UnionInfo" Relationship="RASolarERPModel.FK_UnionInfo_tbl_Upazilla" FromRole="Common_UpazillaInfo" ToRole="Common_UnionInfo" />
+  </EntityType>
+  <EntityType Name="Common_DivisionInfo">
+    <Key>
+      <PropertyRef Name="DIVI_CODE" />
+    </Key>
+    <Property Name="DIVI_CODE" Type="String" MaxLength="6" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="DIVI_NAME" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="Byte" />
+  </EntityType>
+  <Association Name="FK_tbl_upazilla_tbl_district">
+    <End Role="Common_DistrictInfo" Type="Self.Common_DistrictInfo" Multiplicity="1" />
+    <End Role="Common_UpazillaInfo" Type="Self.Common_UpazillaInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Common_DistrictInfo">
+        <PropertyRef Name="DIST_CODE" />
+      </Principal>
+      <Dependent Role="Common_UpazillaInfo">
+        <PropertyRef Name="DIST_CODE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="RASolarERPEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Common_DistrictInfo" EntityType="Self.Common_DistrictInfo" />
+    <EntitySet Name="Common_UpazillaInfo" EntityType="Self.Common_UpazillaInfo" />
+    <EntitySet Name="Common_DivisionInfo" EntityType="Self.Common_DivisionInfo" />
+    <AssociationSet Name="FK_tbl_upazilla_tbl_district" Association="Self.FK_tbl_upazilla_tbl_district">
+      <End Role="Common_DistrictInfo" EntitySet="Common_DistrictInfo" />
+      <End Role="Common_UpazillaInfo" EntitySet="Common_UpazillaInfo" />
+    </AssociationSet>
+    <EntitySet Name="Hrm_EducationInfo" EntityType="RASolarERPModel.Hrm_EducationInfo" />
+    <EntitySet Name="Hrm_MajorSubject" EntityType="RASolarERPModel.Hrm_MajorSubject" />
+    <EntitySet Name="Hrm_MaritalStatusInfo" EntityType="RASolarERPModel.Hrm_MaritalStatusInfo" />
+    <EntitySet Name="Hrm_ReligionInfo" EntityType="RASolarERPModel.Hrm_ReligionInfo" />
+    <EntitySet Name="Hrm_BloodGroupInfo" EntityType="RASolarERPModel.Hrm_BloodGroupInfo" />
+    <EntitySet Name="Common_UnionInfo" EntityType="RASolarERPModel.Common_UnionInfo" />
+    <AssociationSet Name="FK_UnionInfo_tbl_Upazilla" Association="RASolarERPModel.FK_UnionInfo_tbl_Upazilla">
+      <End Role="Common_UpazillaInfo" EntitySet="Common_UpazillaInfo" />
+      <End Role="Common_UnionInfo" EntitySet="Common_UnionInfo" />
+    </AssociationSet>
+    <EntitySet Name="Hrm_CandidatesCVBank" EntityType="RASolarERPModel.Hrm_CandidatesCVBank" />
+    <EntitySet Name="Hrm_CandidatesCVBankExtension" EntityType="RASolarERPModel.Hrm_CandidatesCVBankExtension" />
+    <AssociationSet Name="FK_Hrm_CandidatesCVBankExtension_Hrm_CandidatesCVBank" Association="RASolarERPModel.FK_Hrm_CandidatesCVBankExtension_Hrm_CandidatesCVBank">
+      <End Role="Hrm_CandidatesCVBank" EntitySet="Hrm_CandidatesCVBank" />
+      <End Role="Hrm_CandidatesCVBankExtension" EntitySet="Hrm_CandidatesCVBankExtension" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Hrm_EducationInfo">
+    <Key>
+      <PropertyRef Name="EducationID" />
+    </Key>
+    <Property Name="EducationID" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="true" />
+    <Property Name="EducationName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EducationLevel" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="SortingOrder" Type="Byte" />
+    <Property Name="Status" Type="Byte" />
+  </EntityType>
+  <EntityType Name="Hrm_MajorSubject">
+    <Key>
+      <PropertyRef Name="MajorSubjectID" />
+    </Key>
+    <Property Name="MajorSubjectID" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="true" />
+    <Property Name="MajorSubjectName" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="SortingOrder" Type="Byte" />
+    <Property Name="Status" Type="Byte" />
+  </EntityType>
+  <EntityType Name="Hrm_MaritalStatusInfo">
+    <Key>
+      <PropertyRef Name="MaritalStatusID" />
+    </Key>
+    <Property Name="MaritalStatusID" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="true" />
+    <Property Name="MaritalStatusDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SortingOrder" Type="Byte" />
+    <Property Name="Status" Type="Byte" />
+  </EntityType>
+  <EntityType Name="Hrm_ReligionInfo">
+    <Key>
+      <PropertyRef Name="ReligionID" />
+    </Key>
+    <Property Name="ReligionID" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="true" />
+    <Property Name="ReligionName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SortingOrder" Type="Byte" />
+    <Property Name="Status" Type="Byte" />
+  </EntityType>
+  <EntityType Name="Hrm_BloodGroupInfo">
+    <Key>
+      <PropertyRef Name="BloodGroupID" />
+    </Key>
+    <Property Name="BloodGroupID" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="true" />
+    <Property Name="BloodGroupDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SortingOrder" Type="Byte" />
+    <Property Name="Status" Type="Byte" />
+  </EntityType>
+  <EntityType Name="Common_UnionInfo">
+    <Key>
+      <PropertyRef Name="UnionID" />
+    </Key>
+    <Property Name="UnionID" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="true" />
+    <Property Name="UnionName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpazilaCode" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="true" />
+    <Property Name="IDCOLUnionID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="IDCOLUnionName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Byte" Nullable="false" />
+    <NavigationProperty Name="Common_UpazillaInfo" Relationship="RASolarERPModel.FK_UnionInfo_tbl_Upazilla" FromRole="Common_UnionInfo" ToRole="Common_UpazillaInfo" />
+  </EntityType>
+  <Association Name="FK_UnionInfo_tbl_Upazilla">
+    <End Type="RASolarERPModel.Common_UpazillaInfo" Role="Common_UpazillaInfo" Multiplicity="1" />
+    <End Type="RASolarERPModel.Common_UnionInfo" Role="Common_UnionInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Common_UpazillaInfo">
+        <PropertyRef Name="UPAZ_CODE" />
+      </Principal>
+      <Dependent Role="Common_UnionInfo">
+        <PropertyRef Name="UpazilaCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Hrm_CandidatesCVBank">
+    <Key>
+      <PropertyRef Name="CandidateID" />
+    </Key>
+    <Property Name="CandidateID" Type="String" Nullable="false" MaxLength="8" FixedLength="true" Unicode="true" />
+    <Property Name="CandidateName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CandidateFathersName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CandidateMothersName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DateOfBirth" Type="DateTime" Precision="0" />
+    <Property Name="Gender" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+    <Property Name="MaritalStatus" Type="String" MaxLength="6" FixedLength="true" Unicode="true" />
+    <Property Name="Nationality" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Religion" Type="String" MaxLength="6" FixedLength="true" Unicode="true" />
+    <Property Name="NationalIDCard" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="EmailID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ApplicationDate" Type="DateTime" Precision="0" />
+    <Property Name="IsAnywhereInBd" Type="Boolean" />
+    <Property Name="PreferredDepartment" Type="String" MaxLength="6" FixedLength="true" Unicode="true" />
+    <Property Name="PreferredDistrictCode" Type="String" MaxLength="6" FixedLength="true" Unicode="true" />
+    <Property Name="PreferredDistrictCode1" Type="String" MaxLength="6" FixedLength="true" Unicode="true" />
+    <Property Name="PreferredDistrictCode2" Type="String" MaxLength="6" FixedLength="true" Unicode="true" />
+    <Property Name="PresentDivisionCode" Type="String" MaxLength="6" FixedLength="true" Unicode="true" />
+    <Property Name="PresentDistrictCode" Type="String" MaxLength="6" FixedLength="true" Unicode="true" />
+    <Property Name="PresentUpazillaCode" Type="String" MaxLength="6" FixedLength="true" Unicode="true" />
+    <Property Name="PresentUnionID" Type="String" MaxLength="6" FixedLength="true" Unicode="true" />
+    <Property Name="PresentPoliceStation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PresentPostOffice" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PresentStreetOrVillage" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PresentHouseNo" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="PresentMobileNo" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="true" />
+    <Property Name="PresentPhone" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+    <Property Name="PermanentDivisionCode" Type="String" MaxLength="6" FixedLength="true" Unicode="true" />
+    <Property Name="PermanentDistrictCode" Type="String" MaxLength="6" FixedLength="true" Unicode="true" />
+    <Property Name="PermanentUpazillaCode" Type="String" MaxLength="6" FixedLength="true" Unicode="true" />
+    <Property Name="PermanentUnionID" Type="String" MaxLength="6" FixedLength="true" Unicode="true" />
+    <Property Name="PermanentPoliceStation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PermanentPostOffice" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PermanentStreetVillage" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PermanentHouseNo" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="PermanentMobileNo" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+    <Property Name="ComputerSkill_MSWord" Type="Boolean" />
+    <Property Name="ComputerSkill_MSExcel" Type="Boolean" />
+    <Property Name="ComputerSkill_MSPPoint" Type="Boolean" />
+    <Property Name="ComputerSkill_MobileApp" Type="Boolean" />
+    <Property Name="ComputerSkill_ERP" Type="Boolean" />
+    <Property Name="ExtracurricularActivities" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="SourcesOfJobInfo" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="AppliedPosition" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="CareerObjective" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Name="ReferenceName1" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="ReferenceOrgNAddress1" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="ReferenceDesignation1" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="ReferenceContactNo1" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+    <Property Name="ReferenceEmail1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ReferenceRelation1" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="ReferenceName2" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="ReferenceOrgNAddress2" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="ReferenceDesignation2" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="ReferenceContactNo2" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+    <Property Name="ReferenceEmail2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ReferenceRelation2" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="IsRecordsSubmitted" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="Byte" />
+    <Property Name="StatusChangedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Hrm_CandidatesCVBankExtension" Relationship="RASolarERPModel.FK_Hrm_CandidatesCVBankExtension_Hrm_CandidatesCVBank" FromRole="Hrm_CandidatesCVBank" ToRole="Hrm_CandidatesCVBankExtension" />
+    <Property Name="TrackingDistrictName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Hrm_CandidatesCVBankExtension">
+    <Key>
+      <PropertyRef Name="CandidateID" />
+    </Key>
+    <Property Name="CandidateID" Type="String" Nullable="false" MaxLength="8" FixedLength="true" Unicode="true" />
+    <Property Name="DegreeName" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="MajorSubject" Type="String" MaxLength="6" FixedLength="true" Unicode="true" />
+    <Property Name="Board_University" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="InstituteName" Type="String" MaxLength="60" FixedLength="true" Unicode="true" />
+    <Property Name="PassingYear" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
+    <Property Name="Grade" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
+    <Property Name="ExamGrade" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+    <Property Name="Result" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+    <Property Name="Achievement" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="DegreeName1" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="MajorSubject1" Type="String" MaxLength="6" FixedLength="true" Unicode="true" />
+    <Property Name="Board_University1" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="InstituteName1" Type="String" MaxLength="60" FixedLength="true" Unicode="true" />
+    <Property Name="PassingYear1" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
+    <Property Name="Grade1" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
+    <Property Name="ExamGrade1" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+    <Property Name="Result1" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+    <Property Name="Achievement1" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="DegreeName2" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="MajorSubject2" Type="String" MaxLength="6" FixedLength="true" Unicode="true" />
+    <Property Name="Board_University2" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="InstituteName2" Type="String" MaxLength="60" FixedLength="true" Unicode="true" />
+    <Property Name="PassingYear2" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
+    <Property Name="Grade2" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
+    <Property Name="ExamGrade2" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+    <Property Name="Result2" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+    <Property Name="Achievement2" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="DegreeName3" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="MajorSubject3" Type="String" MaxLength="6" FixedLength="true" Unicode="true" />
+    <Property Name="Board_University3" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="InstituteName3" Type="String" MaxLength="60" FixedLength="true" Unicode="true" />
+    <Property Name="PassingYear3" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
+    <Property Name="Grade3" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
+    <Property Name="ExamGrade3" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+    <Property Name="Result3" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+    <Property Name="Achievement3" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="DegreeName4" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="MajorSubject4" Type="String" MaxLength="6" FixedLength="true" Unicode="true" />
+    <Property Name="Board_University4" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="InstituteName4" Type="String" MaxLength="60" FixedLength="true" Unicode="true" />
+    <Property Name="PassingYear4" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
+    <Property Name="Grade4" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
+    <Property Name="ExamGrade4" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+    <Property Name="Result4" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+    <Property Name="Achievement4" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="TrainingName" Type="String" MaxLength="60" FixedLength="true" Unicode="true" />
+    <Property Name="TrainingInstituteName" Type="String" MaxLength="70" FixedLength="true" Unicode="true" />
+    <Property Name="TrainingInstituteAddress" Type="String" MaxLength="70" FixedLength="true" Unicode="true" />
+    <Property Name="TrainingDuration" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="TrainingYear" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
+    <Property Name="TrainingAchievement" Type="String" MaxLength="70" FixedLength="true" Unicode="true" />
+    <Property Name="TrainingName1" Type="String" MaxLength="60" FixedLength="true" Unicode="true" />
+    <Property Name="TrainingInstituteName1" Type="String" MaxLength="70" FixedLength="true" Unicode="true" />
+    <Property Name="TrainingInstituteAddress1" Type="String" MaxLength="70" FixedLength="true" Unicode="true" />
+    <Property Name="TrainingDuration1" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="TrainingYear1" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
+    <Property Name="TrainingAchievement1" Type="String" MaxLength="70" FixedLength="true" Unicode="true" />
+    <Property Name="TrainingName2" Type="String" MaxLength="60" FixedLength="true" Unicode="true" />
+    <Property Name="TrainingInstituteName2" Type="String" MaxLength="70" FixedLength="true" Unicode="true" />
+    <Property Name="TrainingInstituteAddress2" Type="String" MaxLength="70" FixedLength="true" Unicode="true" />
+    <Property Name="TrainingDuration2" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="TrainingYear2" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
+    <Property Name="TrainingAchievement2" Type="String" MaxLength="70" FixedLength="true" Unicode="true" />
+    <Property Name="TrainingName3" Type="String" MaxLength="60" FixedLength="true" Unicode="true" />
+    <Property Name="TrainingInstituteName3" Type="String" MaxLength="70" FixedLength="true" Unicode="true" />
+    <Property Name="TrainingInstituteAddress3" Type="String" MaxLength="70" FixedLength="true" Unicode="true" />
+    <Property Name="TrainingDuration3" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="TrainingYear3" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
+    <Property Name="TrainingAchievement3" Type="String" MaxLength="70" FixedLength="true" Unicode="true" />
+    <Property Name="TrainingName4" Type="String" MaxLength="60" FixedLength="true" Unicode="true" />
+    <Property Name="TrainingInstituteName4" Type="String" MaxLength="70" FixedLength="true" Unicode="true" />
+    <Property Name="TrainingInstituteAddress4" Type="String" MaxLength="70" FixedLength="true" Unicode="true" />
+    <Property Name="TrainingDuration4" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="TrainingYear4" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
+    <Property Name="TrainingAchievement4" Type="String" MaxLength="70" FixedLength="true" Unicode="true" />
+    <Property Name="ExperienceOrganization" Type="String" MaxLength="40" FixedLength="true" Unicode="true" />
+    <Property Name="ExperienceOrganizationAddress" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="ExperienceDesignation" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="ExperienceDepartment" Type="String" MaxLength="25" FixedLength="true" Unicode="true" />
+    <Property Name="ExperienceFromDate" Type="DateTime" Precision="0" />
+    <Property Name="ExperienceToDate" Type="DateTime" Precision="0" />
+    <Property Name="ExperienceAchievement" Type="String" MaxLength="60" FixedLength="true" Unicode="true" />
+    <Property Name="ExperienceOrganization1" Type="String" MaxLength="40" FixedLength="true" Unicode="true" />
+    <Property Name="ExperienceOrganizationAddress1" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="ExperienceDesignation1" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="ExperienceDepartment1" Type="String" MaxLength="25" FixedLength="true" Unicode="true" />
+    <Property Name="ExperienceFromDate1" Type="DateTime" Precision="0" />
+    <Property Name="ExperienceToDate1" Type="DateTime" Precision="0" />
+    <Property Name="ExperienceAchievement1" Type="String" MaxLength="60" FixedLength="true" Unicode="true" />
+    <Property Name="ExperienceOrganization2" Type="String" MaxLength="40" FixedLength="true" Unicode="true" />
+    <Property Name="ExperienceOrganizationAddress2" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="ExperienceDesignation2" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="ExperienceDepartment2" Type="String" MaxLength="25" FixedLength="true" Unicode="true" />
+    <Property Name="ExperienceFromDate2" Type="DateTime" Precision="0" />
+    <Property Name="ExperienceToDate2" Type="DateTime" Precision="0" />
+    <Property Name="ExperienceAchievement2" Type="String" MaxLength="60" FixedLength="true" Unicode="true" />
+    <Property Name="ExperienceOrganization3" Type="String" MaxLength="40" FixedLength="true" Unicode="true" />
+    <Property Name="ExperienceOrganizationAddress3" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="ExperienceDesignation3" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="ExperienceDepartment3" Type="String" MaxLength="25" FixedLength="true" Unicode="true" />
+    <Property Name="ExperienceFromDate3" Type="DateTime" Precision="0" />
+    <Property Name="ExperienceToDate3" Type="DateTime" Precision="0" />
+    <Property Name="ExperienceAchievement3" Type="String" MaxLength="60" FixedLength="true" Unicode="true" />
+    <Property Name="ExperienceOrganization4" Type="String" MaxLength="40" FixedLength="true" Unicode="true" />
+    <Property Name="ExperienceOrganizationAddress4" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="ExperienceDesignation4" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="ExperienceDepartment4" Type="String" MaxLength="25" FixedLength="true" Unicode="true" />
+    <Property Name="ExperienceFromDate4" Type="DateTime" Precision="0" />
+    <Property Name="ExperienceToDate4" Type="DateTime" Precision="0" />
+    <Property Name="ExperienceAchievement4" Type="String" MaxLength="60" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Hrm_CandidatesCVBank" Relationship="RASolarERPModel.FK_Hrm_CandidatesCVBankExtension_Hrm_CandidatesCVBank" FromRole="Hrm_CandidatesCVBankExtension" ToRole="Hrm_CandidatesCVBank" />
+  </EntityType>
+  <Association Name="FK_Hrm_CandidatesCVBankExtension_Hrm_CandidatesCVBank">
+    <End Type="RASolarERPModel.Hrm_CandidatesCVBank" Role="Hrm_CandidatesCVBank" Multiplicity="1" />
+    <End Type="RASolarERPModel.Hrm_CandidatesCVBankExtension" Role="Hrm_CandidatesCVBankExtension" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Hrm_CandidatesCVBank">
+        <PropertyRef Name="CandidateID" />
+      </Principal>
+      <Dependent Role="Hrm_CandidatesCVBankExtension">
+        <PropertyRef Name="CandidateID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

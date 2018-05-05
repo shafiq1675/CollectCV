@@ -1,0 +1,2764 @@
+﻿@model RsfRecruimentApp.Models.ApplicantDetailsInfo
+@{
+    ViewBag.Title = "RSF Application Form";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .table th {
+        text-align: center !important;
+    }
+
+    a {
+        color: #0254EB;
+    }
+
+        a:visited {
+            color: #0254EB;
+        }
+
+        a.morelink {
+            text-decoration: none;
+            outline: none;
+        }
+
+    .morecontent span {
+        display: none;
+    }
+
+    .comment {
+        width: 100%;
+        /*background-color: #f0f0f0;*/
+        text-align: justify;
+        margin-top: 10px;
+        overflow: hidden;
+    }
+
+    .comment1 {
+        width: 100%;
+        /*background-color: #f0f0f0;*/
+        text-align: justify;
+        margin-top: 10px;
+        overflow: hidden;
+    }
+
+    .more1 {
+        color: #0254EB;
+        cursor: pointer;
+        list-style: none;
+    }
+</style>
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<link href="~/Content/themes/base/jquery-ui.css" rel="stylesheet" />
+<p style="font-size:20px" id="successMsg" hidden>@ViewBag.SuccessMsg</p>
+@using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+<div>
+    <div class="col-lg-12">
+        @*<input type="text" id="trackingDistrictName" hidden>*@
+        @Html.HiddenFor(x => x.TrackingDistrictName, new { @type = "text", @id = "trackingDistrictName", @hidden = "hidden" })
+    </div>
+    <div class="col-lg-12">
+        <div class="comment more">
+            <b>RSF সম্পর্কেঃ</b><br />
+            রুরাল সার্ভিসেস ফাউন্ডেশন (RSF), রহিমআফরোজ এর একটি উদ্যোগ, ২০০৬ ইং সাল হতে গ্রাম পর্যায়ে সোলার হোম সিস্টেম, বায়োগ্যাস, উন্নত চূলা নিয়ে কাজ করে আসছে। বর্তমানে প্রায় ৫০০ অফিসে উদ্যোক্তা Network এর মাধ্যমে উপরোক্ত পণ্য ও সেবার পাশাপাশি হোম অ্যাপ্লায়েন্সেস (টিভি, ফ্যান, SMART Phone, এলইডি বাতি), ব্যাটারি(EV, Rickshaw, MC), প্লাস্টিক পণ্য ইত্যাদি পণ্য ও সেবা নিয়ে কাজ করে যাচ্ছে।
+            এছাড়াও ব্যাংকিং সেবা তৃণমূল পর্যায়ে ছড়িয়ে দেয়ার উদ্দেশ্যে RSF এজেন্ট ব্যাংকিং কার্যক্রম শুরু করেছে। পর্যায়ক্রমে সকল ইউনিট অফিসে এই কার্যক্রম পরিচালনা করা হবে।
+            তৃণমূল পর্যায়ে গ্রাহকদের নিকট বহুবিধ পণ্য বিক্রি ও আর্থিক সেবা প্রদানের মাধ্যমে নেটওয়ার্ক ভিত্তিক প্লাটফর্মের সহায়তায় সফল উদ্যোক্তা গড়ে তুলতে বদ্ধপরিকর।
+
+        </div>
+        <div class="comment more">
+            <b>এন্ট্রাপ্রিনিউর/উদ্যোক্তা কি?</b><br />
+            নিজের কিছু করার স্বপ্ন ও যোগ্যতা থাকা সত্ত্বেও হয়তো আপনি শুরুটা করতে পারছেন না। কারণ, একটি ব্যবসা শুরু করার জন্য অফিস, লোকবল, প্রয়োজনীয় প্রশিক্ষণ ইত্যাদি আপনার কাছে নেই। রুরাল সার্ভিসেস ফাউন্ডেশন আপনাকে এই সুবিধাগুলো প্রদান করে একজন সফল  উদ্যোক্তা হিসেবে গড়ে তুলতে প্রতিশ্রুতিবদ্ধ। এছাড়াও সোলার হোম সিস্টেম, বায়োগ্যাস, আইসিএস, অত্যাধুনিক অ্যাপ্লায়েন্সেস(টিভি, ফ্যান, SMART Phone, এলইডি বাতি, ব্যাটারি, প্লাস্টিক সামগ্রী এবং এজেন্ট ব্যাংক সহ অন্যান্য পণ্য ও সেবা প্রদানের মাধ্যমে আপনার এন্ট্রাপ্রিনিউর হওয়ার যাত্রাকে করা হবে আরো সহজতর।
+            RSF উদ্যোক্তা Network এর আওতায় 3E Digital Platform (Energy, Empowerment & Enterprise) এর মাধ্যমে সারাদেশে কার্যক্রম পরিচালিত হচ্ছে এবং আগামি আর্থিক বছরে আরো নতুন অফিসে এই কার্যক্রম পরিচালনার পরিকল্পনা গ্রহণ করেছে।
+            উদ্যোক্তাগণ এই Platform- কে ব্যবহার করে ডিজিটাল মার্কেটে বহুবিধ পণ্য ও সেবার প্রচার-প্রসারে ই-কমার্স বিজনেজ করার সুযোগ পাবেন যেখানে গ্রাহক থেকে শুরু করে সকলেই অনলাইন সুবিধার আওতাভুক্ত থাকবেন।
+                       
+
+        </div>
+        <div class="comment1">
+            <b>এন্ট্রাপ্রিনিউর/ উদ্যোক্তা এর দায়িত্ব ও কর্তব্যঃ</b><br />
+            <ul class="term-list">
+                <li class="term-item">নিজ এলাকায় অবস্থান করে সংশ্লিষ্ট এলাকার গ্রাহক ও মার্কেটে RSF এর পণ্য প্রচার ও সেবার মান উন্নয়ন করা।</li>
+                <li class="term-item">ব্যাংকিং সুবিধাবঞ্চিত এলাকায় এজেন্ট ব্যাংকিং কার্যক্রম পরিচালনা করা।</li>
+                <li class="term-item">মাসিক বিক্রির ও আদায়ের লক্ষমাত্রা অর্জন করা।</li>
+                <li class="term-item">বিক্রয়োত্তর গ্রাহক সেবা নিশ্চিত করা।</li>
+                <li class="term-item">প্রয়োজনীয় সংখ্যক Field Promoter সংগ্রহ ও প্রশিক্ষণের ব্যবস্থা করা।</li>
+            </ul>
+        </div>
+        <div class="comment1">
+            <b>এন্ট্রাপ্রিনিউর/ উদ্যোক্তা এর শিক্ষাগত ও অন্যা্ন্য যোগ্যতাঃ</b><br />
+            <ul class="term-list">
+                <li class="term-item">গ্র্যাজুয়েট/ অনার্স/ মাস্টার্স।</li>
+                <li class="term-item">বয়সঃ ২২-৪০ বছর।</li>
+                <li class="term-item">অভিজ্ঞতাঃ মাঠ পর্যায়ে FMCG/ Insurance/ Medical Promotion/ মার্কেটিং কার্যক্রমে অভিজ্ঞ প্রাথীগণ অগ্রাধিকার পাবেন।</li>
+                <li class="term-item">কম্পিউটার ও SMART Phone পরিচালনায় দক্ষ হতে হবে।</li>
+                <li class="term-item">প্রাথমিকভাবে ১,০০,০০০/- টাকা বিনিয়োগ করতে সক্ষম।</li>
+            </ul>
+
+        </div>
+    </div>
+    <fieldset style="margin-bottom:15px; margin-top:10px;">
+        
+        <div class="row">
+            <div class="col-lg-12 form-group">
+                <p>নির্দেশনাঃ </p>
+                <ul>
+                    <li>আপনি সকল ফিল্ড এর তথ্য দিতে পারেন, কিন্তু ( <b style="color:#ff0000">*</b> ) চিহ্ন সম্বলিত ফিল্ড গুলকে অবশ্যই পুরন করতে হবে।</li>
+                    <li>আপনি যদি সকল আবশ্যক তথ্য দিয়ে (Submit) করেন তাহলে আপনি আর আপনার তথ্য পরিবর্তন করতে পারবেন না। </li>
+                </ul>
+            </div>
+        </div>
+    </fieldset>
+    <fieldset style="margin-bottom:15px; margin-top:10px;">
+
+        <div class="row">
+
+            <div class="form-group col-lg-4" style="width: 25%;">
+                @Html.LabelFor(x => x.SourceOfJobInfo, "Sources of job info", new { @for = "sourceOfJobInfo", @class = "label" })<b style="color:#ff0000">*</b>
+            </div>
+            <div class="form-group col-lg-4">
+                @Html.DropDownListFor(m => m.SourceOfJobInfo, new[]{
+               new SelectListItem () {Text = "---select one---", Value = ""},
+                new SelectListItem () {Text = "Newspaper Ads", Value = "Newspaper Ads"},
+                new SelectListItem () {Text = "RSF Internal or  Ex-employee", Value = "RSF Internal or  Ex-employee"},
+                new SelectListItem () {Text = "Social Media", Value = "Social Media"},
+                new SelectListItem () {Text = "Friends Circle", Value = "Friends Circle"},
+                new SelectListItem () {Text = "Educational Institutions", Value = "Educational Institutions"}
+                }, new { @class = "form-control", @id = "sourceOfJobInfo" })
+            </div>
+        </div>
+    </fieldset>
+    <fieldset style="margin-bottom:15px; margin-top:10px;">
+        
+        <div class="row">
+
+            <div class="form-group col-lg-4" style="width: 25%;">
+                @Html.LabelFor(x => x.AppliedPosition, "Application for the position", new { @for = "appliedPosition", @class = "label" })<b style="color:#ff0000">*</b>
+            </div>
+            <div class="form-group col-lg-4">
+                @Html.DropDownListFor(m => m.AppliedPosition, new[]{
+                new SelectListItem () {Text = "Entrepreneur/উদ্যোক্তা", Value = "Entrepreneur"}
+                }, new { @class = "form-control", @id = "appliedPosition" })
+
+            </div>
+        </div>
+    </fieldset>
+    <fieldset style="margin-bottom:15px; margin-top:10px;">
+        <div class="row">
+            <div class="form-group col-lg-4">
+                @Html.LabelFor(x => x.SearchMobileNo, "Present Mobile No", new { @for = "searchMobileNo", @class = "label" })<b style="color:#ff0000">*</b>
+                @Html.TextBoxFor(x => x.SearchMobileNo, new { @type = "text", @id = "searchMobileNo", @maxlength = "11", @class = "form-control", @placeholder = "Present Mobile No" })
+            </div>
+            <div class="form-group col-lg-4">
+                @Html.LabelFor(x => x.AppliedPosition, "National ID No", new { @for = "searchNID", @class = "label" })<b style="color:#ff0000">*</b>
+                @Html.TextBoxFor(x => x.SearchNID, new { @type = "text", @id = "searchNID", @maxlength = "17", @class = "form-control", @placeholder = "National Id No" })
+
+            </div>
+
+            <div class="form-group col-lg-2" style="margin-top: 20px; ">
+                <input type="button" id="searchButton" class="btn btn-primary" style="height: 25px;padding: 0 5px 0 5px;" value="Search Application" />
+                
+            </div>
+        </div>
+        @*<button type="submit" class="btn btn-primary" id="universalSaveButton" style="float:right">Save</button>*@
+    </fieldset>
+
+    <fieldset>
+        <legend>Career Objective</legend>
+        <div class="row">
+            <div class="form-group col-lg-12">
+                @Html.TextAreaFor(x => x.CareerObjective, new { @type = "text", @id = "careerObjective", @maxlength = "400", @class = "form-control", @placeholder = "Career Objective" })
+            </div>
+        </div>
+        <div id="careerObjectiveCharacter" style="margin-bottom:0px; font-size:12px;">&#9763; Career Objective Maximum 400 Characters.</div>
+    </fieldset>
+    <fieldset>
+        <legend style="margin-top:20px">Personal Details</legend>
+        <!--first row start for personal details-->
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+
+                            @Html.LabelFor(x => x.ApplicantName, "Applicant Name", new { @for = "inputName", @class = "label" })<b style="color:#ff0000">*</b>
+                            @Html.TextBoxFor(x => x.ApplicantName, new { @type = "text", @id = "inputName", @class = "form-control input-text", @placeholder = "Name" })
+                            
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            @Html.LabelFor(x => x.ApplicantFatherName, "Father's Name", new { @for = "fathersName", @class = "label" })<b style="color:#ff0000">*</b>
+                            @Html.TextBoxFor(x => x.ApplicantFatherName, new { @type = "text", @id = "fathersName", @class = "form-control", @placeholder = "Father's Name" })
+                            
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            @Html.LabelFor(x => x.ApplicantMotherName, "Mother's Name", new { @for = "mothersName", @class = "label" })<b style="color:#ff0000">*</b>
+                            @Html.TextBoxFor(x => x.ApplicantMotherName, new { @type = "text", @id = "mothersName", @class = "form-control", @placeholder = "Mother's Name" })
+                            
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            @Html.LabelFor(x => x.DateOfBirth, "Date Of Birth", new { @for = "dateOfBirth", @class = "label" })<b style="color:#ff0000">*</b>
+                            @Html.TextBoxFor(x => x.DateOfBirth, new { @type = "date", @id = "dateOfBirth", @class = "form-control", @placeholder = "Date Of Birth" })
+                           
+
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+
+                            @Html.LabelFor(x => x.Gender, "Gender", new { @for = "ddlGender", @class = "label" })<b style="color:#ff0000">*</b>
+                            @Html.DropDownListFor(m => m.Gender, new[]{
+                            new SelectListItem () {Text = "Male", Value = "M"},
+                            new SelectListItem () {Text = "Female", Value = "F"}
+                            }, new { @class = "form-control", @id = "ddlGender" })
+                            
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            @Html.LabelFor(x => x.MaritalStatus, "Marital Status", new { @for = "ddlMaritalStatus", @class = "label" })<b style="color:#ff0000">*</b>
+                            @Html.DropDownListFor(m => m.MaritalStatus, new SelectList(ViewBag.MaritalStatus, "MaritalStatusID", "MaritalStatusDescription"), "--Select--", new { @class = "form-control", @id = "ddlMaritalStatus" })
+                            
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            @Html.LabelFor(x => x.Religion, "Religion", new { @for = "ddlreligion", @class = "label" })<b style="color:#ff0000">*</b>
+                            @Html.DropDownListFor(m => m.Religion, new SelectList(ViewBag.ReligionInfo, "ReligionID", "ReligionName"), "--Select--", new { @class = "form-control", @id = "ddlreligion" })
+
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            @Html.LabelFor(x => x.Nationality, "Nationality", new { @for = "ddlNationality", @class = "label" })<b style="color:#ff0000">*</b>
+                            @Html.DropDownListFor(m => m.Nationality, new[]{
+                            new SelectListItem () {Text = "Bangladesh", Value = "BD"}
+                            }, new { @class = "form-control", @id = "ddlNationality" })                            
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            @Html.LabelFor(x => x.EmailAddress, "Email Address", new { @for = "emailAddress", @class = "label" })<b style="color:#ff0000">*</b>
+                            @Html.TextBoxFor(x => x.EmailAddress, new { @type = "Email", @id = "emailAddress", @class = "form-control", @placeholder = "Email Address" })
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            @Html.LabelFor(x => x.NationalID, "National ID No", new { @for = "nationalID", @class = "label" })<b style="color:#ff0000">*</b>
+                            @Html.TextBoxFor(x => x.NationalID, new { @type = "text", @id = "nationalID", @class = "form-control", @placeholder = "NID", @maxlength = "17", @disabled = "disabled" })
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <fieldset>
+                    <legend>Photo Uploading<b style="color:#ff0000">*</b></legend>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <img id="image_upload_preview" src="" height="150px" width="150px" style="border:2px solid #808080" />
+                            </div>
+                            <div class="form-group">
+                                <div>
+                                    @Html.TextBoxFor(x => x.ImageFile, new { @type = "file", @id = "inputfile" })
+                                </div>
+                                <p style=" margin-top:5px; font-size:12px;">N.B.: Photo size must be less than 200 kb</p>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+
+        <fieldset style="margin-bottom:15px; margin-top:10px;">
+            <legend style="font-size:16px;">Your Preferred Job Location <b style="color:#ff0000">*</b></legend>
+            <div class="row">
+                <div class="col-lg-12 form-group">
+                    <div class="col-lg-12">
+                        <h5 style="font-size:13px"> @Html.CheckBoxFor(x => x.PreferenceAnyWhere, new { @id = "preferenceAnyWhere" }) Any Where in Bangladesh</h5>
+                    </div>
+                    <div class="col-lg-4">
+                        @Html.LabelFor(x => x.PreferenceNumber1, "Preference #1", new { @for = "PreferenceNumber1", @class = "label" })
+                        @Html.DropDownListFor(m => m.PreferenceNumber1, new SelectList(ViewBag.DisTrictList, "DIST_CODE", "DIST_NAME"), "--Select--",
+                        new { @class = "form-control", @id = "PreferenceNumber1" }) 
+                    </div>
+                    <div class="col-lg-4"> 
+                        @Html.LabelFor(x => x.PreferenceNumber2, "Preference #2", new { @for = "PreferenceNumber2", @class = "label" })
+                        @Html.DropDownListFor(m => m.PreferenceNumber2, new SelectList(ViewBag.DisTrictList, "DIST_CODE", "DIST_NAME"), "--Select--",
+                        new { @class = "form-control", @id = "PreferenceNumber2" })
+                    </div>
+                    <div class="col-lg-4">
+                        @Html.LabelFor(x => x.PreferenceNumber3, "Preference #3", new { @for = "PreferenceNumber3", @class = "label" })
+                        @Html.DropDownListFor(m => m.PreferenceNumber3, new SelectList(ViewBag.DisTrictList, "DIST_CODE", "DIST_NAME"), "--Select--",
+                        new { @class = "form-control", @id = "PreferenceNumber3" })
+                    </div>
+
+                </div>
+            </div>
+        </fieldset>
+        @*<button type="submit" class="btn btn-primary" id="universalSaveButton" style="float: right;">Save</button>*@
+    </fieldset>
+
+
+
+    <fieldset>
+        <legend style="margin-top:20px">Contact Information</legend>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <h5 style="border-bottom:1px solid #808080">Present Address</h5>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(x => x.PreHouseNo, "House No", new { @for = "preHouseNo", @class = "label" })
+                    @Html.TextBoxFor(x => x.PreHouseNo, new { @type = "text", @id = "preHouseNo", @class = "form-control", @placeholder = "House No" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(x => x.PreVillageOrStreet, "Street/Village", new { @for = "preVillageOrStreet", @class = "label" })<b style="color:#ff0000">*</b>
+                    @Html.TextBoxFor(x => x.PreVillageOrStreet, new { @type = "text", @id = "preVillageOrStreet", @class = "form-control", @placeholder = "Street/Village" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(x => x.PrePostOffice, "Post Office", new { @for = "prePostOffice", @class = "label" })<b style="color:#ff0000">*</b>
+                    @Html.TextBoxFor(x => x.PrePostOffice, new { @type = "text", @id = "prePostOffice", @class = "form-control", @placeholder = "Post Office" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(x => x.PrePoliceStation, "Police Station", new { @for = "prePoliceStation", @class = "label" })<b style="color:#ff0000">*</b>
+                    @Html.TextBoxFor(x => x.PrePoliceStation, new { @type = "text", @id = "prePoliceStation", @class = "form-control", @placeholder = "Police Station" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(x => x.PreDivision, "Division", new { @for = "preDivision", @class = "label" })<b style="color:#ff0000">*</b>
+                    @Html.DropDownListFor(m => m.PreDivision, new SelectList(ViewBag.DivisionList, "DIVI_CODE", "DIVI_NAME"), "--Select--",
+                    new { @class = "form-control", @id = "preDivision" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(x => x.PreDistrict, "District", new { @for = "preDistrict", @class = "label" })<b style="color:#ff0000">*</b>
+                    @Html.DropDownListFor(m => m.PreDistrict, new SelectList("", "", ""), "--Select--",
+                    new { @class = "form-control", @id = "preDistrict" })
+
+
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(x => x.PreUpozila, "Upazila", new { @for = "preUpozila", @class = "label" })
+                    @Html.DropDownListFor(m => m.PreUpozila, new SelectList("", "", ""), "--Select--",
+                    new { @class = "form-control", @id = "preUpozila" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(x => x.PresentUnionID, "Union", new { @for = "presentUnionID", @class = "label" })
+                    @Html.DropDownListFor(m => m.PresentUnionID, new SelectList("", "", ""), "--Select--",
+                    new { @class = "form-control", @id = "presentUnionID" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(x => x.PreMobileNo, "Mobile No", new { @for = "preMobileNo", @class = "label" })<b style="color:#ff0000">*</b>
+                    @Html.TextBoxFor(x => x.PreMobileNo, new { @type = "text", @id = "preMobileNo", @class = "form-control", @placeholder = "Mobile No", @maxlength = "11", @disabled = "disabled" })
+                    @Html.ValidationMessageFor(x => x.PreMobileNo)
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(x => x.PreHomePhoneNo, "Alternative Mobile No", new { @for = "preHomePhoneNo", @class = "label" })
+                    @Html.TextBoxFor(x => x.PreHomePhoneNo, new { @type = "text", @id = "preHomePhoneNo", @class = "form-control", @placeholder = "Alternative Mobile No", @maxlength = "11" })
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <h5 style="border-bottom:1px solid #808080">Permanent Address. <b>if same as present</b> <input type="checkbox" id="sameAsPresent" style="margin-top:-1px !important " /></h5>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(x => x.PerHouseNo, "House No", new { @for = "perHouseNo", @class = "label" })
+                    @Html.TextBoxFor(x => x.PerHouseNo, new { @type = "text", @id = "perHouseNo", @class = "form-control", @placeholder = "House No" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(x => x.PerVillageOrStreet, "Street/Village", new { @for = "perVillageOrStreet", @class = "label" })<b style="color:#ff0000">*</b>
+                    @Html.TextBoxFor(x => x.PerVillageOrStreet, new { @type = "text", @id = "perVillageOrStreet", @class = "form-control", @placeholder = "Village" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(x => x.PerPostOffice, "Post Office", new { @for = "perPostOffice", @class = "label" })<b style="color:#ff0000">*</b>
+                    @Html.TextBoxFor(x => x.PerPostOffice, new { @type = "text", @id = "perPostOffice", @class = "form-control", @placeholder = "Post Office" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(x => x.PerPoliceStation, "Police Station", new { @for = "perPoliceStation", @class = "label" })<b style="color:#ff0000">*</b>
+                    @Html.TextBoxFor(x => x.PerPoliceStation, new { @type = "text", @id = "perPoliceStation", @class = "form-control", @placeholder = "Police Station" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(x => x.PerDivision, "Division", new { @for = "perDivision", @class = "label" })<b style="color:#ff0000">*</b>
+                    @Html.DropDownListFor(m => m.PerDivision, new SelectList(ViewBag.DivisionList, "DIVI_CODE", "DIVI_NAME"), "--Select--",
+                    new { @class = "form-control", @id = "perDivision" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(x => x.PerDistrict, "District", new { @for = "perDistrict", @class = "label" })<b style="color:#ff0000">*</b>
+                    @Html.DropDownListFor(m => m.PerDistrict, new SelectList("", "", ""), "--Select--", new { @class = "form-control", @id = "perDistrict" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(x => x.PerUpozila, "Upazila", new { @for = "perUpozila", @class = "label" })
+                    @Html.DropDownListFor(m => m.PerUpozila, new SelectList("", "", ""), "--Select--",
+                    new { @class = "form-control", @id = "perUpozila" })                    
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(x => x.PermanentUnionID, "Union", new { @for = "permanentUnionID", @class = "label" })                    
+                    @Html.DropDownListFor(m => m.PermanentUnionID, new SelectList("", "", ""), "--Select--",
+                    new { @class = "form-control", @id = "permanentUnionID" })
+                    
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(x => x.PerMobileNo, "Home Mobile No", new { @for = "perMobileNo", @class = "label" })
+                    @Html.TextBoxFor(x => x.PerMobileNo, new { @type = "text", @id = "perMobileNo", @class = "form-control", @placeholder = "Home Mobile No", @maxlength = "11" })
+                    
+                </div>
+               
+
+            </div>
+        </div>
+        @*<button type="submit" class="btn btn-primary" id="universalSaveButton" style="float: right;">Save</button>*@
+    </fieldset>
+
+
+
+    <fieldset>
+        <legend style="margin-top:20px">Educational Qualification <b style="color:#ff0000">*</b></legend>
+        <!--first row for edu-->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="form-group">
+                    <table class="table table-bordered text-center">
+                        <tr style="text-align:center">
+                            <th>Degree Name</th>
+                            <th>Major Subject</th>
+                            <th>Board/ University</th>
+                            <th>Institute Name</th>
+                            <th>Passing</th>
+                            <th>Result</th>
+                            <th id="GpaOrMarksHead">GPA/Marks</th>
+                            <th>Achievement</th>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                @Html.DropDownListFor(x => x.DegreeName, new[]{
+                                new SelectListItem(){Text="SSC", Value="SSC"},
+                                new SelectListItem(){Text="Dakhil", Value="DHKL"},
+                                new SelectListItem(){Text="SSC (Voc)", Value="SSCVOC"},
+                                new SelectListItem(){Text="Others", Value="OTHERS"}
+                                }, "--Select--", new { @type = "text", @id = "sscDegreeName", @class = "form-control", @placeholder = "" })
+                            </td>
+                            <td class="col-sm-2">
+                                @Html.DropDownListFor(m => m.MajorSubject, new[]{
+                                new SelectListItem(){Text="Science", Value="SCIENC"},
+                                new SelectListItem(){Text="Commerce", Value="COMERC"},
+                                new SelectListItem(){Text="Humanities", Value="HUMANI"},
+                                new SelectListItem(){Text="Others", Value="OTHERS"}
+
+                                }, "--Select--", new { @class = "form-control ", @id = "sscSubject" })
+                            </td>
+                            <td>
+                                @Html.DropDownListFor(m => m.Board_University, new[]{
+                                new SelectListItem(){Text="Barisal", Value="BSL"},
+                                new SelectListItem(){Text="Chittagong", Value="CTG"},
+                                new SelectListItem(){Text="Comilla", Value="COM"},
+                                new SelectListItem(){Text="Dhaka", Value="DHK"},
+                                new SelectListItem(){Text="Dinajpur", Value="DIN"},
+                                new SelectListItem(){Text="Jessore", Value="JSR"},
+                                new SelectListItem(){Text="Rajshahi", Value="RAJ"},
+                                new SelectListItem(){Text="Sylhet", Value="SYL"},
+                                new SelectListItem(){Text="Technical", Value="TEC"},
+                                new SelectListItem(){Text="Madrasah", Value="MAD"}
+
+                                }, "--Select--", new { @class = "form-control ", @id = "ssboardOrUniversity" })
+                            </td>
+                            <td>@Html.TextBoxFor(x => x.InstituteName, new { @type = "text", @id = "sscInstName", @class = "form-control", @placeholder = "Institute Name" })</td>
+                            <td class="col-sm-1">@Html.TextBoxFor(x => x.PassingYear, new { @type = "text", @id = "sscPassingYear", @class = "form-control", @placeholder = "Year", @maxlength = "4" })</td>
+                                                       
+                            <td class="col-sm-1">
+                                @Html.DropDownListFor(m => m.Result, new[]{
+                                new SelectListItem(){Text="First Division/Class", Value="1ST"},
+                                new SelectListItem(){Text="Second Division/Class", Value="2ND"},
+                                new SelectListItem(){Text="Third Division/Class", Value="3RD"},
+                                new SelectListItem(){Text="Grade", Value="GRD"},
+
+                                }, "--Select--", new { @class = "form-control ", @id = "sscResult" })
+                            </td>
+                            <td width="5%">
+                                <div class="row">
+                                    <div class="col-sm-5" style="padding-right: 0;">
+                                        @Html.TextBoxFor(x => x.Grade, new { @type = "text", @id = "sscGrade", @class = "", @placeholder = "GPA", style = "padding-right: 0;", @maxlength = "4" })
+                                    </div>
+                                    <div class="col-sm-2" style="padding:0" id="outOfText">out</div>
+                                    <div class="col-sm-5" style="padding-right: 10px; padding-left: 0px;">
+                                        @Html.DropDownListFor(m => m.ExamGrade, new[]{
+                                        new SelectListItem(){Text="5", Value="5"},
+                                        new SelectListItem(){Text="4", Value="4"}
+                                        }, new { @class = "form-control ", @id = "sscOutOf" })
+                                    </div>
+                                </div>
+                            </td>
+                            <td>@Html.TextBoxFor(x => x.Achievement, new { @type = "text", @id = "sscAchievement", @class = "form-control", @placeholder = "Achievement" })</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                @Html.DropDownListFor(x => x.DegreeName1, new[] {
+                                new SelectListItem(){Text="HSC", Value="HSC"},
+                                new SelectListItem(){Text="Alim", Value="ALIM"},
+                                new SelectListItem(){Text="HSC(Voc)", Value="HSCVOC"},
+                                new SelectListItem(){Text="Others", Value="OTHERS"}
+                                }, "--Select--", new { @type = "text", @id = "hscOrEquDegree", @class = "form-control", @placeholder = "" })
+                            </td>
+
+                            <td class="col-sm-2">
+                                @Html.DropDownListFor(m => m.MajorSubject1, new[]{
+                                new SelectListItem(){Text="Science", Value="SCIENC"},
+                                new SelectListItem(){Text="Commerce", Value="COMERC"},
+                                new SelectListItem(){Text="Humanities", Value="HUMANI"},
+                                new SelectListItem(){Text="Others", Value="OTHERS"}
+
+                                }, "--Select--", new { @class = "form-control ", @id = "hscOrEquSbject" })
+                            </td>
+                            <td>
+                                @Html.DropDownListFor(m => m.Board_University1, new[]{
+                                new SelectListItem(){Text="Barisal", Value="BSL"},
+                                new SelectListItem(){Text="Chittagong", Value="CTG"},
+                                new SelectListItem(){Text="Comilla", Value="COM"},
+                                new SelectListItem(){Text="Dhaka", Value="DHK"},
+                                new SelectListItem(){Text="Dinajpur", Value="DIN"},
+                                new SelectListItem(){Text="Jessore", Value="JSR"},
+                                new SelectListItem(){Text="Rajshahi", Value="RAJ"},
+                                new SelectListItem(){Text="Sylhet", Value="SYL"},
+                                new SelectListItem(){Text="Technical", Value="TEC"},
+                                new SelectListItem(){Text="Madrasah", Value="MAD"}
+                                }, "--Select--", new { @class = "form-control ", @id = "hscEquBoardOrUniversity" })
+                            </td>
+                            <td>@Html.TextBoxFor(x => x.InstituteName1, new { @type = "text", @id = "hscOrEquInstName", @class = "form-control", @placeholder = "Institute Name" })</td>
+                            <td class="col-sm-1">@Html.TextBoxFor(x => x.PassingYear1, new { @type = "text", @id = "hscOrEquPassingYear", @class = "form-control", @placeholder = "Year", @maxlength = "4" })</td>
+                           
+                            <td class="col-sm-1">
+                                @Html.DropDownListFor(m => m.Result1, new[]{
+                                new SelectListItem(){Text="First Division/Class", Value="1ST"},
+                                new SelectListItem(){Text="Second Division/Class", Value="2ND"},
+                                new SelectListItem(){Text="Third Division/Class", Value="3RD"},
+                                new SelectListItem(){Text="Grade", Value="GRD"},
+
+                                }, "--Select--", new { @class = "form-control ", @id = "hscOrEquResult" })
+                            </td>
+                            <td width="5%">
+                                <div class="row">
+                                    <div class="col-sm-5" style="padding-right: 0;">
+                                        @Html.TextBoxFor(x => x.Grade1, new { @type = "text", @id = "hscGrade", @class = "", @placeholder = "GPA", style = "padding-right: 0;", @maxlength = "4" })
+                                    </div>
+                                    <div class="col-sm-2" style="padding:0" id="hscOutOfText">out</div>
+                                    <div class="col-sm-5" style="padding-right: 10px; padding-left: 0px;">
+                                        @Html.DropDownListFor(m => m.ExamGrade1, new[]{
+                                        new SelectListItem(){Text="5", Value="5"},
+                                        new SelectListItem(){Text="4", Value="4"}
+                                        }, new { @class = "form-control ", @id = "hscOutOf" })
+                                    </div>
+                                </div>
+                            </td>
+                            <td>@Html.TextBoxFor(x => x.Achievement1, new { @type = "text", @id = "hscAchievement1", @class = "form-control", @placeholder = "Achievement" })</td>
+                        </tr>
+                        <tr>
+                            <td>@Html.TextBoxFor(x => x.DegreeName2, new { @type = "text", @id = "bscOrEquDegreeName", @class = "form-control", @placeholder = "Degree Name" })</td>
+                            <td class="col-sm-2">
+                                @Html.DropDownListFor(m => m.MajorSubject2, new SelectList(ViewBag.MajorSub, "MajorSubjectID", "MajorSubjectName"),
+                                "--Select--", new { @class = "form-control", @id = "bscOrEquSubject" })
+                            </td>
+                            <td>@Html.TextBoxFor(x => x.Board_University2, new { @type = "text", @id = "bscOrEquBoard_University", @class = "form-control", @placeholder = "University" })</td>
+                            <td>@Html.TextBoxFor(x => x.InstituteName2, new { @type = "text", @id = "bscOrEquInstName", @class = "form-control", @placeholder = "Institute Name" })</td>
+                            <td class="col-sm-1">@Html.TextBoxFor(x => x.PassingYear2, new { @type = "text", @id = "bscOrEquPassingYear", @class = "form-control", @placeholder = "Year", @maxlength = "4" })</td>
+                            <td class="col-sm-1">
+                                @Html.DropDownListFor(m => m.Result2, new[]{
+                                new SelectListItem(){Text="First Division/Class", Value="1ST"},
+                                new SelectListItem(){Text="Second Division/Class", Value="2ND"},
+                                new SelectListItem(){Text="Third Division/Class", Value="3RD"},
+                                new SelectListItem(){Text="Grade", Value="GRD"},
+
+                                }, "--Select--", new { @class = "form-control ", @id = "bscOrEquResult" })
+                            </td>
+                            
+                            <td width="5%">
+                                <div class="row">
+                                    <div class="col-sm-5" style="padding-right: 0;">
+                                        @Html.TextBoxFor(x => x.Grade2, new { @type = "text", @id = "bscGrade", @class = "", @placeholder = "GPA", style = "padding-right: 0;", @maxlength = "4" })
+                                    </div>
+                                    <div class="col-sm-2" style="padding:0" id="bscOutOfText">out</div>
+                                    <div class="col-sm-5" style="padding-right: 10px; padding-left: 0px;">
+                                        @Html.DropDownListFor(m => m.ExamGrade2, new[]{
+                                        new SelectListItem(){Text="5", Value="5"},
+                                        new SelectListItem(){Text="4", Value="4"}
+                                        }, new { @class = "form-control ", @id = "bscOutOf" })
+                                    </div>
+                                </div>
+                            </td>
+                            <td>@Html.TextBoxFor(x => x.Achievement2, new { @type = "text", @id = "achievement2", @class = "form-control", @placeholder = "Achievement" })</td>
+                        </tr>
+                        <tr hidden id="mscRow">
+                            <td>@Html.TextBoxFor(x => x.DegreeName3, new { @type = "text", @id = "mscOrEquDegreeName", @class = "form-control", @placeholder = "Degree Name" })</td>
+                            <td class="col-sm-2">
+                                @Html.DropDownListFor(m => m.MajorSubject3, new SelectList(ViewBag.MajorSub, "MajorSubjectID", "MajorSubjectName"),
+                                "--Select--", new { @class = "form-control", @id = "mscOrEquSubject" })
+                            </td>
+                            <td>@Html.TextBoxFor(x => x.Board_University3, new { @type = "text", @id = "mscOrEquBoard_University", @class = "form-control", @placeholder = "University" })</td>
+                            <td>@Html.TextBoxFor(x => x.InstituteName3, new { @type = "text", @id = "mscOrEquInstName", @class = "form-control", @placeholder = "Institute Name" })</td>
+                            <td class="col-sm-1">@Html.TextBoxFor(x => x.PassingYear3, new { @type = "text", @id = "mscOrEquPassingYear", @class = "form-control", @placeholder = "Year", @maxlength = "4" })</td>
+                            <td class="col-sm-1">
+                                @Html.DropDownListFor(m => m.Result3, new[]{
+                                new SelectListItem(){Text="First Division/Class", Value="1ST"},
+                                new SelectListItem(){Text="Second Division/Class", Value="2ND"},
+                                new SelectListItem(){Text="Third Division/Class", Value="3RD"},
+                                new SelectListItem(){Text="Grade", Value="GRD"},
+
+                                }, "--Select--", new { @class = "form-control ", @id = "mscOrEquResult" })
+                            </td>
+                            
+                            <td width="5%">
+                                <div class="row">
+                                    <div class="col-sm-5" style="padding-right: 0;">
+                                        @Html.TextBoxFor(x => x.Grade3, new { @type = "text", @id = "mscGrade", @class = "", @placeholder = "GPA", style = "padding-right: 0;", @maxlength = "4" })
+                                    </div>
+                                    <div class="col-sm-2" style="padding:0" id="mscOutOfText">out</div>
+                                    <div class="col-sm-5" style="padding-right: 10px; padding-left: 0px;">
+                                        @Html.DropDownListFor(m => m.ExamGrade3, new[]{
+                                        new SelectListItem(){Text="5", Value="5"},
+                                        new SelectListItem(){Text="4", Value="4"}
+                                        }, new { @class = "form-control ", @id = "mscOutOf" })
+                                    </div>
+                                </div>
+                            </td>
+                            <td>@Html.TextBoxFor(x => x.Achievement3, new { @type = "text", @id = "achievement3", @class = "form-control", @placeholder = "Achievement" })</td>
+                        </tr>
+                        <tr hidden id="othersRow">
+                            <td>@Html.TextBoxFor(x => x.DegreeName4, new { @type = "text", @id = "othersDegreeName", @class = "form-control", @placeholder = "Degree Name" })</td>
+                            <td class="col-sm-2">
+                                @Html.DropDownListFor(m => m.MajorSubject4, new SelectList(ViewBag.MajorSub, "MajorSubjectID", "MajorSubjectName"),
+                                "--Select--", new { @class = "form-control", @id = "othersDegreeSuject" })
+                            </td>
+                            <td>@Html.TextBoxFor(x => x.Board_University4, new { @type = "text", @id = "othersBoardOrUniversity", @class = "form-control", @placeholder = "University" })</td>
+                            <td>@Html.TextBoxFor(x => x.InstituteName4, new { @type = "text", @id = "othersInstName", @class = "form-control", @placeholder = "Institute Name" })</td>
+                            <td class="col-sm-1">@Html.TextBoxFor(x => x.PassingYear3, new { @type = "text", @id = "othersPassingYear", @class = "form-control", @placeholder = "Year", @maxlength = "4" })</td>
+                            <td class="col-sm-1">
+                                @Html.DropDownListFor(m => m.Result4, new[]{
+                                new SelectListItem(){Text="First Division/Class", Value="1ST"},
+                                new SelectListItem(){Text="Second Division/Class", Value="2ND"},
+                                new SelectListItem(){Text="Third Division/Class", Value="3RD"},
+                                new SelectListItem(){Text="Grade", Value="GRD"},
+
+                                }, "--Select--", new { @class = "form-control ", @id = "othersResult" })
+                            </td>
+                            
+                            <td id="forGpa" width="5%">
+                                <div class="row">
+                                    <div class="col-sm-5" style="padding-right: 0;">
+                                        @Html.TextBoxFor(x => x.Grade4, new { @type = "text", @id = "othersGrade", @class = "", @placeholder = "GPA", style = "padding-right: 0;", @maxlength = "4" })
+                                    </div>
+                                    <div class="col-sm-2" style="padding:0" id="othersOutOfText">out</div>
+                                    <div class="col-sm-5" style="padding-right: 10px; padding-left: 0px;">
+                                        @Html.DropDownListFor(m => m.ExamGrade4, new[]{
+                                        new SelectListItem(){Text="5", Value="5"},
+                                        new SelectListItem(){Text="4", Value="4"}
+                                        }, new { @class = "form-control ", @id = "othersOutOf" })
+                                    </div>
+                                </div>
+                            </td>
+                            <td>@Html.TextBoxFor(x => x.Achievement4, new { @type = "text", @id = "achievement4", @class = "form-control", @placeholder = "Achievement" })</td>
+                        </tr>
+                    </table>
+                    <button type="button" class="btn btn-primary" id="showMsc">Add More</button>
+                    <button type="button" class="btn btn-primary" style="display:none;" id="showOthers" hidden>Add More</button>
+                </div>
+            </div>
+        </div>
+        @*<button type="submit" class="btn btn-primary" id="universalSaveButton" style="float: right;">Save</button>*@
+    </fieldset>
+    <fieldset>
+        <legend style="margin-top:15px">Training Details</legend>
+        <div class="row">
+            <div class="form-group col-lg-12">
+                <table class="table table-bordered text-center">
+                    <tr>
+                        <th>Training Title/Name</th>
+                        <th>Institute Name</th>
+                        <th>Institute Address</th>
+                        <th>Training Duration</th>
+                        <th>Training Year</th>
+                        <th>Achievement</th>
+                    </tr>
+                    <tr>
+                        <td>@Html.TextBoxFor(x => x.TrainingName, new { @type = "text", @id = "trainingName", @class = "form-control", @placeholder = "Training Title" })</td>
+                        <td>@Html.TextBoxFor(x => x.TrainingInstituteName, new { @type = "text", @id = "trainingInstituteName", @class = "form-control", @placeholder = "Institute Name" })</td>
+                        <td>@Html.TextBoxFor(x => x.TrainingInstituteAddress, new { @type = "text", @id = "trainingInstituteAddress", @class = "form-control", @placeholder = "Institute Address" })</td>
+                        <td>@Html.TextBoxFor(x => x.TrainingDuration, new { @type = "text", @id = "trainingDuration", @class = "form-control", @placeholder = "Training Duration" })</td>
+                        <td>@Html.TextBoxFor(x => x.TrainingYear, new { @type = "text", @id = "trainingYear", @class = "form-control", @placeholder = "Training Year" })</td>
+                        <td>@Html.TextBoxFor(x => x.TrainingAchievement, new { @type = "text", @id = "trainingAchievement", @class = "form-control", @placeholder = "Achievement" })</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.TextBoxFor(x => x.TrainingName1, new { @type = "text", @id = "trainingName1", @class = "form-control", @placeholder = "Training title" })</td>
+                        <td>@Html.TextBoxFor(x => x.TrainingInstituteName1, new { @type = "text", @id = "trainingInstituteName1", @class = "form-control", @placeholder = "Institute Name" })</td>
+                        <td>@Html.TextBoxFor(x => x.TrainingInstituteAddress1, new { @type = "text", @id = "trainingInstituteAddress1", @class = "form-control", @placeholder = "Institute Address" })</td>
+                        <td>@Html.TextBoxFor(x => x.TrainingDuration1, new { @type = "text", @id = "trainingDuration1", @class = "form-control", @placeholder = "Training Duration" })</td>
+                        <td>@Html.TextBoxFor(x => x.TrainingYear1, new { @type = "text", @id = "trainingYear1", @class = "form-control", @placeholder = "Training Year" })</td>
+                        <td>@Html.TextBoxFor(x => x.TrainingAchievement1, new { @type = "text", @id = "trainingAchievement1", @class = "form-control", @placeholder = "Achievement" })</td>
+                    </tr>
+                    <tr hidden id="thirdTraining">
+                        <td>@Html.TextBoxFor(x => x.TrainingName2, new { @type = "text", @id = "trainingName2", @class = "form-control", @placeholder = "Tranning Title" })</td>
+                        <td>@Html.TextBoxFor(x => x.TrainingInstituteName2, new { @type = "text", @id = "trainingInstituteName2", @class = "form-control", @placeholder = "Institute Name" })</td>
+                        <td>@Html.TextBoxFor(x => x.TrainingInstituteAddress2, new { @type = "text", @id = "trainingInstituteAddress2", @class = "form-control", @placeholder = "Institute Address" })</td>
+                        <td>@Html.TextBoxFor(x => x.TrainingDuration2, new { @type = "text", @id = "trainingDuration2", @class = "form-control", @placeholder = "Training Duration" })</td>
+                        <td>@Html.TextBoxFor(x => x.TrainingYear2, new { @type = "text", @id = "trainingYear2", @class = "form-control", @placeholder = "Training Year" })</td>
+                        <td>@Html.TextBoxFor(x => x.TrainingAchievement2, new { @type = "text", @id = "trainingAchievement2", @class = "form-control", @placeholder = "Achievement" })</td>
+                    </tr>
+                    <tr hidden id="forthTraining">
+                        <td>@Html.TextBoxFor(x => x.TrainingName3, new { @type = "text", @id = "trainingName3", @class = "form-control", @placeholder = "Tranning Title" })</td>
+                        <td>@Html.TextBoxFor(x => x.TrainingInstituteName3, new { @type = "text", @id = "trainingInstituteName3", @class = "form-control", @placeholder = "Institute Name" })</td>
+                        <td>@Html.TextBoxFor(x => x.TrainingInstituteAddress3, new { @type = "text", @id = "trainingInstituteAddress3", @class = "form-control", @placeholder = "Institute Address" })</td>
+                        <td>@Html.TextBoxFor(x => x.TrainingDuration3, new { @type = "text", @id = "trainingDuration3", @class = "form-control", @placeholder = "Training Duration" })</td>
+                        <td>@Html.TextBoxFor(x => x.TrainingYear3, new { @type = "text", @id = "trainingYear3", @class = "form-control", @placeholder = "Training Year" })</td>
+                        <td>@Html.TextBoxFor(x => x.TrainingAchievement3, new { @type = "text", @id = "trainingAchievement3", @class = "form-control", @placeholder = "Achievement" })</td>
+                    </tr>
+                    <tr hidden id="fifthTraining">
+                        <td>@Html.TextBoxFor(x => x.TrainingName4, new { @type = "text", @id = "trainingName4", @class = "form-control", @placeholder = "Tranning Title" })</td>
+                        <td>@Html.TextBoxFor(x => x.TrainingInstituteName4, new { @type = "text", @id = "trainingInstituteName4", @class = "form-control", @placeholder = "Institute Name" })</td>
+                        <td>@Html.TextBoxFor(x => x.TrainingInstituteAddress4, new { @type = "text", @id = "trainingInstituteAddress4", @class = "form-control", @placeholder = "Institute Address" })</td>
+                        <td>@Html.TextBoxFor(x => x.TrainingDuration4, new { @type = "text", @id = "trainingDuration4", @class = "form-control", @placeholder = "Training Duration" })</td>
+                        <td>@Html.TextBoxFor(x => x.TrainingYear4, new { @type = "text", @id = "trainingYear4", @class = "form-control", @placeholder = "Training Year" })</td>
+                        <td>@Html.TextBoxFor(x => x.TrainingAchievement4, new { @type = "text", @id = "trainingAchievement4", @class = "form-control", @placeholder = "Achievement" })</td>
+                    </tr>
+                </table>
+                <button type="button" class="btn btn-primary" id="showThirdTraining">Add More</button>
+                <button type="button" class="btn btn-primary" style="display:none;" id="showForthTraining">Add More</button>
+                <button type="button" class="btn btn-primary" style="display:none;" id="showFifthTraining">Add More</button>
+            </div>
+        </div>
+        @*<button type="submit" class="btn btn-primary" id="universalSaveButton" style="float: right;">Save</button>*@
+    </fieldset>
+
+    <fieldset>
+        <legend style="margin-top:10px">Experience </legend>
+        <div class="row">
+            <div class="form-group col-lg-12">
+                <table class="table table-bordered text-center">
+                    <tr>
+                        <th>Organization Name</th>
+                        <th>Org. Address</th>
+                        <th>Designation</th>
+                        <th>Department</th>
+                        <th>From Date</th>
+                        <th>To Date</th>
+                        <th>Special Achievement </th>
+                    </tr>
+                    <tr>
+                        <td>@Html.TextBoxFor(x => x.ExperienceOrganization, new { @type = "text", @id = "experienceOrganization", @class = "form-control", @placeholder = "Organization Name" })</td>
+                        <td>@Html.TextBoxFor(x => x.ExperienceOrganizationAddress, new { @type = "text", @id = "experienceOrganizationAddress", @class = "form-control", @placeholder = "Organiza. Address" })</td>
+                        <td style="width:12%">@Html.TextBoxFor(x => x.ExperienceDesignation, new { @type = "text", @id = "experienceDesignation", @class = "form-control", @placeholder = "Designation" })</td>
+                        <td style="width:12%">@Html.TextBoxFor(x => x.ExperienceDepartment, new { @type = "text", @id = "experienceDepartment", @class = "form-control", @placeholder = "Department" })</td>
+                        <td style="width:12%">@Html.TextBoxFor(x => x.ExperienceFromDate, new { @type = "date", @id = "experienceFromDate", @class = "form-control", @placeholder = "From Date" })</td>
+                        <td style="width:12%">@Html.TextBoxFor(x => x.ExperienceToDate, new { @type = "date", @id = "experienceToDate", @class = "form-control", @placeholder = "To Date" })</td>
+                        <td>@Html.TextBoxFor(x => x.ExperienceAchievement, new { @type = "text", @id = "experienceAchievement", @class = "form-control", @placeholder = "Special Achievement" })</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.TextBoxFor(x => x.ExperienceOrganization1, new { @type = "text", @id = "experienceOrganization1", @class = "form-control", @placeholder = "Organization Name" })</td>
+                        <td>@Html.TextBoxFor(x => x.ExperienceOrganizationAddress1, new { @type = "text", @id = "experienceOrganizationAddress1", @class = "form-control", @placeholder = "Organiza. Address" })</td>
+                        <td style="width:12%">@Html.TextBoxFor(x => x.ExperienceDesignation1, new { @type = "text", @id = "experienceDesignation1", @class = "form-control", @placeholder = "Designation" })</td>
+                        <td style="width:12%">@Html.TextBoxFor(x => x.ExperienceDepartment1, new { @type = "text", @id = "experienceDepartment1", @class = "form-control", @placeholder = "Department" })</td>
+                        <td style="width:12%">@Html.TextBoxFor(x => x.ExperienceFromDate1, new { @type = "date", @id = "experienceFromDate1", @class = "form-control", @placeholder = "From Date" })</td>
+                        <td style="width:12%">@Html.TextBoxFor(x => x.ExperienceToDate1, new { @type = "date", @id = "experienceToDate1", @class = "form-control", @placeholder = "To Date" })</td>
+                        <td>@Html.TextBoxFor(x => x.ExperienceAchievement1, new { @type = "text", @id = "experienceAchievement1", @class = "form-control", @placeholder = "Special Achievement " })</td>
+                    </tr>
+                    <tr hidden id="thirdExprience">
+                        <td>@Html.TextBoxFor(x => x.ExperienceOrganization2, new { @type = "text", @id = "experienceOrganization2", @class = "form-control", @placeholder = "Organization Name" })</td>
+                        <td>@Html.TextBoxFor(x => x.ExperienceOrganizationAddress2, new { @type = "text", @id = "experienceOrganizationAddress2", @class = "form-control", @placeholder = "Organiza. Address" })</td>
+                        <td style="width:12%">@Html.TextBoxFor(x => x.ExperienceDesignation2, new { @type = "text", @id = "experienceDesignation2", @class = "form-control", @placeholder = "Designation" })</td>
+                        <td style="width:12%">@Html.TextBoxFor(x => x.ExperienceDepartment2, new { @type = "text", @id = "experienceDepartment2", @class = "form-control", @placeholder = "Department" })</td>
+                        <td style="width:12%">@Html.TextBoxFor(x => x.ExperienceFromDate2, new { @type = "date", @id = "experienceFromDate2", @class = "form-control", @placeholder = "From Date" })</td>
+                        <td style="width:12%">@Html.TextBoxFor(x => x.ExperienceToDate2, new { @type = "date", @id = "experienceToDate2", @class = "form-control", @placeholder = "To Date" })</td>
+                        <td>@Html.TextBoxFor(x => x.ExperienceAchievement2, new { @type = "text", @id = "experienceAchievement2", @class = "form-control", @placeholder = "Special Achievement " })</td>
+                    </tr>
+                    <tr hidden id="forthExprience">
+                        <td>@Html.TextBoxFor(x => x.ExperienceOrganization3, new { @type = "text", @id = "experienceOrganization3", @class = "form-control", @placeholder = "Organization Name" })</td>
+                        <td>@Html.TextBoxFor(x => x.ExperienceOrganizationAddress3, new { @type = "text", @id = "experienceOrganizationAddress3", @class = "form-control", @placeholder = "Organiza. Address" })</td>
+                        <td style="width:12%">@Html.TextBoxFor(x => x.ExperienceDesignation3, new { @type = "text", @id = "experienceDesignation3", @class = "form-control", @placeholder = "Designation" })</td>
+                        <td style="width:12%">@Html.TextBoxFor(x => x.ExperienceDepartment3, new { @type = "text", @id = "experienceDepartment3", @class = "form-control", @placeholder = "Department" })</td>
+                        <td style="width:12%">@Html.TextBoxFor(x => x.ExperienceFromDate3, new { @type = "date", @id = "experienceFromDate3", @class = "form-control", @placeholder = "From Date" })</td>
+                        <td style="width:12%">@Html.TextBoxFor(x => x.ExperienceToDate3, new { @type = "date", @id = "experienceToDate3", @class = "form-control", @placeholder = "To Date" })</td>
+                        <td>@Html.TextBoxFor(x => x.ExperienceAchievement3, new { @type = "text", @id = "experienceAchievement3", @class = "form-control", @placeholder = "Special Achievement " })</td>
+                    </tr>
+                    <tr hidden id="fifthExprience">
+                        <td>@Html.TextBoxFor(x => x.ExperienceOrganization4, new { @type = "text", @id = "experienceOrganization4", @class = "form-control", @placeholder = "Organization Name" })</td>
+                        <td>@Html.TextBoxFor(x => x.ExperienceOrganizationAddress4, new { @type = "text", @id = "experienceOrganizationAddress4", @class = "form-control", @placeholder = "Organiza. Address" })</td>
+                        <td style="width:12%">@Html.TextBoxFor(x => x.ExperienceDesignation4, new { @type = "text", @id = "experienceDesignation4", @class = "form-control", @placeholder = "Designation" })</td>
+                        <td style="width:12%">@Html.TextBoxFor(x => x.ExperienceDepartment4, new { @type = "text", @id = "experienceDepartment4", @class = "form-control", @placeholder = "Department" })</td>
+                        <td style="width:12%">@Html.TextBoxFor(x => x.ExperienceFromDate4, new { @type = "date", @id = "experienceFromDate4", @class = "form-control", @placeholder = "From Date" })</td>
+                        <td style="width:12%">@Html.TextBoxFor(x => x.ExperienceToDate4, new { @type = "date", @id = "experienceToDate4", @class = "form-control", @placeholder = "To Date" })</td>
+                        <td>@Html.TextBoxFor(x => x.ExperienceAchievement4, new { @type = "text", @id = "experienceAchievement4", @class = "form-control", @placeholder = "Special Achievement " })</td>
+                    </tr>
+                </table>
+                <button type="button" class="btn btn-primary" id="showThirdExprience">Add More</button>
+                <button type="button" class="btn btn-primary" style="display:none;" id="showForthExprience">Add More</button>
+                <button type="button" class="btn btn-primary" style="display:none;" id="showFifthExprience">Add More</button>
+
+            </div>
+        </div>
+        @*<button type="submit" class="btn btn-primary" id="universalSaveButton" style="float: right;">Save</button>*@
+    </fieldset>
+    <fieldset>
+        <legend style="margin-top:10px">Computer Skill <b style="color:#ff0000">*</b></legend>
+        <div class="row">
+            <div class="form-group col-lg-12">
+               
+                <div class="col-lg-2">
+                    @Html.CheckBoxFor(x => x.ComputerSkill_MSWord, new { @id = "computerSkill_MSWord" }) MS Word
+                </div>
+                <div class="col-lg-2">
+                    @Html.CheckBoxFor(x => x.ComputerSkill_MSExcel, new { @id = "computerSkill_MSExcel" }) MS Excel
+                </div>
+                <div class="col-lg-2">
+                    @Html.CheckBoxFor(x => x.ComputerSkill_MSPPoint, new { @id = "computerSkill_MSPPoint" }) MS Power Point
+                </div>
+                <div class="col-lg-3">
+                    @Html.CheckBoxFor(x => x.ComputerSkill_MobileApp, new { @id = "computerSkill_MobileApp" }) SMART Phone Apps
+                </div>
+                <div class="col-lg-2">
+                    @Html.CheckBoxFor(x => x.ComputerSkill_ERP, new { @id = "computerSkill_ERP" }) ERP
+                </div>
+            </div>
+        </div>
+       
+    </fieldset>
+   
+    <fieldset>
+        <legend style="margin-top:20px">Extracurricular Activities </legend>
+        <div class="row">
+            <div class="form-group col-lg-12">
+                @Html.TextAreaFor(x => x.ExtracurricularActivities, new { @type = "", @id = "extracurricularActivities", @maxlength = "250", @class = "form-control", @placeholder = "Extra Curricular Activities" })
+            </div>
+        </div>
+        <div id="extracurricularActivitiesCharacter" style="margin-bottom: 0px; font-size: 12px;">&#9763; Extracurricular Activities Maximum 250 Characters.</div>
+    </fieldset>
+   
+    <fieldset>
+        <legend style="margin-top:20px">References<b style="color:#ff0000">*</b> </legend>
+        <div class="row">
+            <div class="form-group col-lg-12">
+                <table class="table table-bordered text-center">
+                    <tr>
+                        <th>Name</th>
+                        <th>Name of Organization & Address</th>
+                        <th>Designation</th>
+                        <th>Contact No</th>
+                        <th>E-mail</th>
+                        <th>Relation</th>
+                    </tr>
+                    <tr>
+                        <td>@Html.TextBoxFor(x => x.ReferenceName1, new { @type = "", @id = "ReferenceName1", @class = "form-control", @placeholder = "Name" })</td>
+                        <td>@Html.TextBoxFor(x => x.ReferenceOrgNAddress1, new { @type = "", @id = "ReferenceOrgNAddress1", @class = "form-control", @placeholder = "Name of Organization & Address" })</td>
+                        <td>@Html.TextBoxFor(x => x.ReferenceDesignation1, new { @type = "", @id = "ReferenceDesignation1", @class = "form-control", @placeholder = "Designation" })</td>
+                        <td>@Html.TextBoxFor(x => x.ReferenceContactNo1, new { @type = "", @id = "ReferenceContactNo1", @class = "form-control", @placeholder = "Contact No" })</td>
+                        <td>@Html.TextBoxFor(x => x.ReferenceEmail1, new { @type = "", @id = "ReferenceEmail1", @class = "form-control", @placeholder = "Email Address" })</td>
+                        <td>@Html.TextBoxFor(x => x.ReferenceRelation1, new { @type = "", @id = "ReferenceRelation1", @class = "form-control", @placeholder = "Relation" })</td>
+                    </tr>                    
+                    <tr>
+                        <td>@Html.TextBoxFor(x => x.ReferenceName2, new { @type = "", @id = "ReferenceName2", @class = "form-control", @placeholder = "Name" })</td>
+                        <td>@Html.TextBoxFor(x => x.ReferenceOrgNAddress2, new { @type = "", @id = "ReferenceOrgNAddress2", @class = "form-control", @placeholder = "Name of Organization & Address" })</td>
+                        <td>@Html.TextBoxFor(x => x.ReferenceDesignation2, new { @type = "", @id = "ReferenceDesignation2", @class = "form-control", @placeholder = "Designation" })</td>
+                        <td>@Html.TextBoxFor(x => x.ReferenceContactNo2, new { @type = "", @id = "ReferenceContactNo2", @class = "form-control", @placeholder = "Contact No" })</td>
+                        <td>@Html.TextBoxFor(x => x.ReferenceEmail2, new { @type = "", @id = "ReferenceEmail2", @class = "form-control", @placeholder = "Email Address" })</td>
+                        <td>@Html.TextBoxFor(x => x.ReferenceRelation2, new { @type = "", @id = "ReferenceRelation2", @class = "form-control", @placeholder = "Relation" })</td>
+                    </tr>
+                </table>
+            </div>
+            
+
+        </div>
+        @*<button type="submit" class="btn btn-primary" id="universalSaveButton" style="float: right;">Save</button>*@
+    </fieldset>
+
+
+
+    <button type="submit" class="btn btn-primary" id="formSubmit" style="margin-top:10px; float:inherit">Submit</button> @Html.CheckBoxFor(x => x.IsRecordsSubmitted, new { @id = "isSumited", @hidden = "hidden" })
+</div>
+}
+
+<script src="~/Scripts/jquery-ui-1.12.0.min.js"></script>
+<script src="~/Scripts/jquery-3.1.0.min.js"></script>
+@*
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>*@
+<script>
+    $("#sscGrade").prop('disabled', true);
+    $("#outOfText").prop('disabled', true);
+    $("#sscOutOf").prop('disabled', true);
+
+    $("#hscGrade").prop('disabled', true);
+    $("#hscOutOfText").prop('disabled', true);
+    $("#hscOutOf").prop('disabled', true);
+
+    $("#bscGrade").prop('disabled', true);
+    $("#bscOutOfText").prop('disabled', true);
+    $("#bscOutOf").prop('disabled', true);
+
+    $("#mscGrade").prop('disabled', true);
+    $("#mscOutOfText").prop('disabled', true);
+    $("#mscOutOf").prop('disabled', true);
+
+    $("#othersGrade").prop('disabled', true);
+    $("#othersOutOfText").prop('disabled', true);
+    $("#othersOutOf").prop('disabled', true);
+
+
+    $("#showOthers").hide();
+
+    $("#showForthExprience").hide();
+    $("#showFifthExprience").hide();
+
+    $("#showForthTraining").hide();
+    $("#showFifthTraining").hide();
+
+
+
+    $(document).ready(function () {
+
+        $('ul.term-list').each(function () {
+
+            var LiN = $(this).find('li').length;
+
+            if (LiN > 2) {
+                $('li', this).eq(1).nextAll().hide().addClass('toggleable');
+                $(this).append('<li class="more1">more...</li>');
+            }
+
+        });
+
+
+        $('ul.term-list').on('click', '.more1', function () {
+
+            if ($(this).hasClass('less')) {
+                $(this).text('more...').removeClass('less');
+            } else {
+                $(this).text('less...').addClass('less');
+            }
+
+            $(this).siblings('li.toggleable').slideToggle();
+
+        });
+
+
+
+
+        //
+        var showChar = 200;
+        var ellipsestext = "...";
+        var moretext = "more";
+        var lesstext = "less";
+        $('.more').each(function () {
+            var content = $(this).html();
+
+            if (content.length > showChar) {
+
+                var c = content.substr(0, showChar);
+                var h = content.substr(showChar - 1, content.length - showChar);
+
+                var html = c + '<span class="moreellipses">' + ellipsestext + '&nbsp;</span><span class="morecontent"><span>' + h + '</span>&nbsp;&nbsp;<a href="" class="morelink">' + moretext + '</a></span>';
+
+                $(this).html(html);
+            }
+
+        });
+
+        $(".morelink").click(function () {
+            if ($(this).hasClass("less")) {
+                $(this).removeClass("less");
+                $(this).html(moretext);
+            } else {
+                $(this).addClass("less");
+                $(this).html(lesstext);
+            }
+            $(this).parent().prev().toggle();
+            $(this).prev().toggle();
+            return false;
+        });
+        //
+        $("#universalSaveButton").click(function () {
+            var searchMobileNo = $("#searchMobileNo").val();
+            var searchNID = $("#searchNID").val();
+
+            if (searchMobileNo == "") {
+                alert("Enter Your Present Mobile No");
+                return false;
+            };
+            if (searchNID == "") {
+                alert("Enter Your National Id No");
+                return false;
+            };
+
+        });
+
+        $("#preferenceAnyWhere").on('change', function () {
+
+            var preferrenceAnyWhere = $(this).is(':checked') ? 1 : 0;
+            if (preferrenceAnyWhere == 1) {
+                $("#PreferenceNumber1").prop('disabled', true);
+                $("#PreferenceNumber2").prop('disabled', true);
+                $("#PreferenceNumber3").prop('disabled', true);
+                $("#PreferenceNumber1").val("");
+                $("#PreferenceNumber2").val("");
+                $("#PreferenceNumber3").val("");
+            }
+            else {
+                $("#PreferenceNumber1").prop('disabled', false);
+                $("#PreferenceNumber2").prop('disabled', false);
+                $("#PreferenceNumber3").prop('disabled', false);
+            }
+        })
+
+
+        $("#searchButton").click(function () {
+            var searchMobileNo = $("#searchMobileNo").val();
+            var searchNID = $("#searchNID").val();
+
+            if (searchMobileNo == "") {
+                alert("Enter Your Present Mobile No");
+                return false;
+            };
+            if (searchNID == "") {
+                alert("Enter Your National Id No");
+                return false;
+            };
+
+            $.ajax({                
+                url: '@Url.Action("SearchWithMoibleNoAndNID", "Home")',
+                type: 'POST',
+                data: JSON.stringify({ searchMobileNo: searchMobileNo, searchNID: searchNID }),
+                contentType: 'application/json; charset=utf-8',
+                dataType: 'json',
+                success: function (listOfCandidateInfo) {
+                    
+                    $("#sourceOfJobInfo").val(listOfCandidateInfo.SourceOfJobInfo);
+                    $("#appliedPosition").val(listOfCandidateInfo.AppliedPosition);
+                    $("#careerObjective").val(listOfCandidateInfo.CareerObjective);
+                    $("#inputName").val(listOfCandidateInfo.ApplicantName);
+                    $("#fathersName").val(listOfCandidateInfo.ApplicantFatherName);
+                    $("#mothersName").val(listOfCandidateInfo.ApplicantMotherName);                   
+                    if (listOfCandidateInfo.DateOfBirth != null) {
+                        var customizeDateOfBirth = listOfCandidateInfo.DateOfBirth;
+                        var trickStringForDoB = customizeDateOfBirth.substring(6);
+                        var trickNumberForDoB = parseInt(trickStringForDoB);
+                        var d = new Date(trickNumberForDoB);
+                        $("#dateOfBirth").val((d.getMonth() + 1) + "/" + d.getDate() + "/" + d.getFullYear());
+                    }
+
+                    $("#ddlGender").val(listOfCandidateInfo.Gender);
+                    $("#ddlMaritalStatus").val(listOfCandidateInfo.MaritalStatus);
+                    $("#ddlreligion").val(listOfCandidateInfo.Religion);
+                    $("#ddlNationality").val(listOfCandidateInfo.Nationality);
+                    $("#emailAddress").val(listOfCandidateInfo.EmailAddress);
+                    $("#nationalID").val(listOfCandidateInfo.NationalID);                    
+
+                    $("#PreferenceNumber1").val(listOfCandidateInfo.PreferenceNumber1);
+                    $("#PreferenceNumber2").val(listOfCandidateInfo.PreferenceNumber2);
+                    $("#PreferenceNumber3").val(listOfCandidateInfo.PreferenceNumber3);
+                    $("#preferenceAnyWhere").prop('checked', listOfCandidateInfo.PreferenceAnyWhere);
+                    if (listOfCandidateInfo.PreferenceAnyWhere == true) {
+                        $("#PreferenceNumber1").prop('disabled', true);
+                        $("#PreferenceNumber2").prop('disabled', true);
+                        $("#PreferenceNumber3").prop('disabled', true);
+                    }
+
+                    $("#preHouseNo").val(listOfCandidateInfo.PreHouseNo);
+                    $("#preVillageOrStreet").val(listOfCandidateInfo.PreVillageOrStreet);
+                    $("#prePostOffice").val(listOfCandidateInfo.PrePostOffice);
+                    $("#prePoliceStation").val(listOfCandidateInfo.PrePoliceStation);
+                    $("#preDivision").val(listOfCandidateInfo.PreDivision);
+                    loadPresentDistrict(listOfCandidateInfo.PreDivision);
+                    setTimeout(function () {
+                        $("#preDistrict").val(listOfCandidateInfo.PreDistrict);
+                    }, 500);
+                    loadPresentUpazila(listOfCandidateInfo.PreDistrict);
+                    setTimeout(function () {
+                        $("#preUpozila").val(listOfCandidateInfo.PreUpozila);
+                    }, 500);
+                    loadPresentUnion(listOfCandidateInfo.PreUpozila);
+                    setTimeout(function () {
+                        $("#presentUnionID").val(listOfCandidateInfo.PresentUnionID);
+                    }, 500);
+                    $("#preMobileNo").val(listOfCandidateInfo.PreMobileNo);
+                    $("#preHomePhoneNo").val(listOfCandidateInfo.PreHomePhoneNo);
+
+
+
+                    $("#perHouseNo").val(listOfCandidateInfo.PerHouseNo);
+                    $("#perVillageOrStreet").val(listOfCandidateInfo.PerVillageOrStreet);
+                    $("#perPostOffice").val(listOfCandidateInfo.PerPostOffice);
+                    $("#perPoliceStation").val(listOfCandidateInfo.PerPoliceStation);
+                    $("#perDivision").val(listOfCandidateInfo.PerDivision);
+                    loadDistrict(listOfCandidateInfo.PerDivision);
+                    setTimeout(function () {
+                        $("#perDistrict").val(listOfCandidateInfo.PerDistrict)
+                    }, 500);
+                    loadUpazila(listOfCandidateInfo.PerDistrict);
+                    setTimeout(function () {
+                        $("#perUpozila").val(listOfCandidateInfo.PerUpozila);
+                    }, 500);
+                    loadUnion(listOfCandidateInfo.PerUpozila);
+                    setTimeout(function () {
+                        $("#permanentUnionID").val(listOfCandidateInfo.PermanentUnionID);
+                    }, 500);
+                    $("#perMobileNo").val(listOfCandidateInfo.PerMobileNo);
+
+                    $("#sscDegreeName").val((listOfCandidateInfo.DegreeName));
+                    $("#sscSubject").val((listOfCandidateInfo.MajorSubject));
+                    $("#ssboardOrUniversity").val((listOfCandidateInfo.Board_University));
+                    $("#sscInstName").val((listOfCandidateInfo.InstituteName));
+                    $("#sscPassingYear").val((listOfCandidateInfo.PassingYear));
+                    $("#sscResult").val((listOfCandidateInfo.Result));
+
+                    //var sscResult = $("#sscResult").val();
+                    if (listOfCandidateInfo.Result == "GRD") {
+                        $("#sscGrade").prop('disabled', false);
+                        $("#outOfText").prop('disabled', false);
+                        $("#sscOutOf").prop('disabled', false);
+                    }
+
+                    $("#sscGrade").val((listOfCandidateInfo.Grade));
+                    $("#sscOutOf").val((listOfCandidateInfo.ExamGrade));
+                    $("#sscAchievement").val((listOfCandidateInfo.Achievement));
+
+
+                    $("#hscOrEquDegree").val(listOfCandidateInfo.DegreeName1);
+                    $("#hscOrEquSbject").val(listOfCandidateInfo.MajorSubject1);
+                    $("#hscEquBoardOrUniversity").val(listOfCandidateInfo.Board_University1);
+                    $("#hscOrEquInstName").val(listOfCandidateInfo.InstituteName1);
+                    $("#hscOrEquPassingYear").val(listOfCandidateInfo.PassingYear1);
+                    $("#hscOrEquResult").val(listOfCandidateInfo.Result1);
+                    if (listOfCandidateInfo.Result1 == "GRD") {
+                        $("#hscGrade").prop('disabled', false);
+                        $("#hscOutOfText").prop('disabled', false);
+                        $("#hscOutOf").prop('disabled', false);
+                    }
+                    $("#hscGrade").val(listOfCandidateInfo.Grade1);
+                    $("#hscOutOf").val(listOfCandidateInfo.ExamGrade1);
+                    $("#hscAchievement1").val(listOfCandidateInfo.Achievement1);
+
+
+                    $("#bscOrEquDegreeName").val(listOfCandidateInfo.DegreeName2);
+                    $("#bscOrEquSubject").val(listOfCandidateInfo.MajorSubject2);
+                    $("#bscOrEquBoard_University").val(listOfCandidateInfo.Board_University2);
+                    $("#bscOrEquInstName").val(listOfCandidateInfo.InstituteName2);
+                    $("#bscOrEquPassingYear").val(listOfCandidateInfo.PassingYear2);
+                    $("#bscOrEquResult").val(listOfCandidateInfo.Result2);
+                    if (listOfCandidateInfo.Resul2 == "GRD") {
+                        $("#bscGrade").prop('disabled', false);
+                        $("#bscOutOfText").prop('disabled', false);
+                        $("#bscOutOf").prop('disabled', false);
+                    }
+                    $("#bscGrade").val(listOfCandidateInfo.Grade2);
+                    $("#bscOutOf").val(listOfCandidateInfo.ExamGrade2);
+                    $("#achievement2").val(listOfCandidateInfo.Achievement2);
+
+                    if (listOfCandidateInfo.DegreeName3 != null) {
+                        $("#mscRow").show();
+                        $("#showMsc").hide();
+                        $("#showOthers").show();
+                    }
+                    $("#mscOrEquDegreeName").val(listOfCandidateInfo.DegreeName3);
+                    $("#mscOrEquSubject").val(listOfCandidateInfo.MajorSubject3);
+                    $("#mscOrEquBoard_University").val(listOfCandidateInfo.Board_University3);
+                    $("#mscOrEquInstName").val(listOfCandidateInfo.InstituteName3);
+                    $("#mscOrEquPassingYear").val(listOfCandidateInfo.PassingYear3);
+                    $("#mscOrEquResult").val(listOfCandidateInfo.Result3);
+                    if (listOfCandidateInfo.Result3 == "GRD") {
+                        $("#mscGrade").prop('disabled', false);
+                        $("#mscOutOfText").prop('disabled', false);
+                        $("#mscOutOf").prop('disabled', false);
+                    }
+                    $("#mscGrade").val(listOfCandidateInfo.Grade3);
+                    $("#mscOutOf").val(listOfCandidateInfo.ExamGrade3);
+                    $("#achievement3").val(listOfCandidateInfo.Achievement3);
+
+                    if (listOfCandidateInfo.DegreeName4 != null) {
+                        $("#othersRow").show();
+                        $("#showOthers").hide();
+                    }
+                    $("#othersDegreeName").val(listOfCandidateInfo.DegreeName4);
+                    $("#othersDegreeSuject").val(listOfCandidateInfo.MajorSubject4);
+                    $("#othersBoardOrUniversity").val(listOfCandidateInfo.Board_University4);
+                    $("#othersInstName").val(listOfCandidateInfo.InstituteName4);
+                    $("#othersPassingYear").val(listOfCandidateInfo.PassingYear4);
+                    $("#othersResult").val(listOfCandidateInfo.Result4);
+                    if (listOfCandidateInfo.Result4 == "GRD") {
+                        $("#othersGrade").prop('disabled', false);
+                        $("#othersOutOfText").prop('disabled', false);
+                        $("#othersOutOf").prop('disabled', false);
+                    }
+                    $("#othersGrade").val(listOfCandidateInfo.Grade4);
+                    $("#othersOutOf").val(listOfCandidateInfo.ExamGrade4);
+                    $("#achievement4").val(listOfCandidateInfo.Achievement4);
+
+
+                    $("#trainingName").val(listOfCandidateInfo.TrainingName);
+                    $("#trainingInstituteName").val(listOfCandidateInfo.TrainingInstituteName);
+                    $("#trainingInstituteAddress").val(listOfCandidateInfo.TrainingInstituteAddress);
+                    $("#trainingDuration").val(listOfCandidateInfo.TrainingDuration);
+                    $("#trainingYear").val(listOfCandidateInfo.TrainingYear);
+                    $("#trainingAchievement").val(listOfCandidateInfo.TrainingAchievement);
+
+                    $("#trainingName1").val(listOfCandidateInfo.TrainingName1);
+                    $("#trainingInstituteName1").val(listOfCandidateInfo.TrainingInstituteName1);
+                    $("#trainingInstituteAddress1").val(listOfCandidateInfo.TrainingInstituteAddress1);
+                    $("#trainingDuration1").val(listOfCandidateInfo.TrainingDuration1);
+                    $("#trainingYear1").val(listOfCandidateInfo.TrainingYear1);
+                    $("#trainingAchievement1").val(listOfCandidateInfo.TrainingAchievement1);
+
+
+                    if (listOfCandidateInfo.TrainingName2 != null) {
+                        $("#thirdTraining").show();
+                        $("#showForthTraining").show();
+                        $("#showThirdTraining").hide();
+                    }
+
+                    $("#trainingName2").val(listOfCandidateInfo.TrainingName2);
+                    $("#trainingInstituteName2").val(listOfCandidateInfo.TrainingInstituteName2);
+                    $("#trainingInstituteAddress2").val(listOfCandidateInfo.TrainingInstituteAddress2);
+                    $("#trainingDuration2").val(listOfCandidateInfo.TrainingDuration2);
+                    $("#trainingYear2").val(listOfCandidateInfo.TrainingYear2);
+                    $("#trainingAchievement2").val(listOfCandidateInfo.TrainingAchievement2);
+                    if (listOfCandidateInfo.TrainingName3 != null) {
+                        $("#forthTraining").show();
+                        $("#showFifthTraining").show();
+                        $("#showForthTraining").hide();
+                    }
+
+                    $("#trainingName3").val(listOfCandidateInfo.TrainingName3);
+                    $("#trainingInstituteName3").val(listOfCandidateInfo.TrainingInstituteName3);
+                    $("#trainingInstituteAddress3").val(listOfCandidateInfo.TrainingInstituteAddress3);
+                    $("#trainingDuration3").val(listOfCandidateInfo.TrainingDuration3);
+                    $("#trainingYear3").val(listOfCandidateInfo.TrainingYear3);
+                    $("#trainingAchievement3").val(listOfCandidateInfo.TrainingAchievement3);
+
+                    if (listOfCandidateInfo.TrainingName4 != null) {
+                        $("#fifthTraining").show();
+                        //$("#showFifthTraining").show();
+                        $("#showFifthTraining").hide();
+                    }
+
+                    $("#trainingName4").val(listOfCandidateInfo.TrainingName4);
+                    $("#trainingInstituteName4").val(listOfCandidateInfo.TrainingInstituteName4);
+                    $("#trainingInstituteAddress4").val(listOfCandidateInfo.TrainingInstituteAddress4);
+                    $("#trainingDuration4").val(listOfCandidateInfo.TrainingDuration4);
+                    $("#trainingYear4").val(listOfCandidateInfo.TrainingYear4);
+                    $("#trainingAchievement4").val(listOfCandidateInfo.TrainingAchievement4);
+
+
+                    $("#experienceOrganization").val(listOfCandidateInfo.ExperienceOrganization);
+                    $("#experienceOrganizationAddress").val(listOfCandidateInfo.ExperienceOrganizationAddress);
+                    $("#experienceDesignation").val(listOfCandidateInfo.ExperienceDesignation);
+                    $("#experienceDepartment").val(listOfCandidateInfo.ExperienceDepartment);
+                    if (listOfCandidateInfo.ExperienceFromDate != null) {
+                        var exFromDate = listOfCandidateInfo.ExperienceFromDate;
+                        var trickString = exFromDate.substring(6);
+                        var trickNumber = parseInt(trickString);
+                        var customExprienceFromDate = new Date(trickNumber);
+                        //$("#experienceFromDate").val(customExprienceFromDate.getDate() + "/" + (customExprienceFromDate.getMonth() + 1) + "/" + customExprienceFromDate.getFullYear());
+                        $("#experienceFromDate").val((customExprienceFromDate.getMonth() + 1) + "/" + customExprienceFromDate.getDate() + "/" + customExprienceFromDate.getFullYear());
+                    }
+                    if (listOfCandidateInfo.ExperienceToDate != null) {
+                        var exToDate = listOfCandidateInfo.ExperienceToDate;
+                        var trickString = exToDate.substring(6);
+                        var trickNumber = parseInt(trickString);
+                        var customExprienceToDate = new Date(trickNumber);
+                        $("#experienceToDate").val((customExprienceToDate.getMonth() + 1) + "/" + customExprienceToDate.getDate() + "/" + customExprienceToDate.getFullYear());
+                    }
+
+                    $("#experienceAchievement").val(listOfCandidateInfo.ExperienceAchievement);
+
+                    $("#experienceOrganization1").val(listOfCandidateInfo.ExperienceOrganization1);
+                    $("#experienceOrganizationAddress1").val(listOfCandidateInfo.ExperienceOrganizationAddress1);
+                    $("#experienceDesignation1").val(listOfCandidateInfo.ExperienceDesignation1);
+                    $("#experienceDepartment1").val(listOfCandidateInfo.ExperienceDepartment1);
+
+                    if (listOfCandidateInfo.ExperienceFromDate1 != null) {
+                        var exFromDate1 = listOfCandidateInfo.ExperienceFromDate1;
+                        var trickString1 = exFromDate1.substring(6);
+                        var trickNumber1 = parseInt(trickString1);
+                        var customExprienceFromDate1 = new Date(trickNumber1);
+                        $("#experienceFromDate1").val((customExprienceFromDate1.getMonth() + 1) + "/" + customExprienceFromDate1.getDate() + "/" + customExprienceFromDate1.getFullYear());
+                    }
+
+                    if (listOfCandidateInfo.ExperienceToDate1 != null) {
+                        var exToDate1 = listOfCandidateInfo.ExperienceToDate1;
+                        var trickString1 = exToDate1.substring(6);
+                        var trickNumber1 = parseInt(trickString1);
+                        var customExprienceToDate1 = new Date(trickNumber1);
+                        $("#experienceToDate1").val((customExprienceToDate1.getMonth() + 1) + "/" + customExprienceToDate1.getDate() + "/" + customExprienceToDate1.getFullYear());
+                    }
+                    $("#experienceAchievement1").val(listOfCandidateInfo.ExperienceAchievement1);
+
+                    if (listOfCandidateInfo.ExperienceOrganization2 != null) {
+                        $("#thirdExprience").show();
+                        $("#showForthExprience").show();
+                        $("#showThirdExprience").hide();
+                    }
+
+                    $("#experienceOrganization2").val(listOfCandidateInfo.ExperienceOrganization2);
+                    $("#experienceOrganizationAddress2").val(listOfCandidateInfo.ExperienceOrganizationAddress2);
+                    $("#experienceDesignation2").val(listOfCandidateInfo.ExperienceDesignation2);
+                    $("#experienceDepartment2").val(listOfCandidateInfo.ExperienceDepartment2);
+                    if (listOfCandidateInfo.ExperienceFromDate2 != null) {
+                        var exFromDate2 = listOfCandidateInfo.ExperienceFromDate2;
+                        var trickString2 = exFromDate2.substring(6);
+                        var trickNumber2 = parseInt(trickString2);
+                        var customExprienceFromDate2 = new Date(trickNumber2);
+                        $("#experienceFromDate2").val((customExprienceFromDate2.getMonth() + 1) + "/" + customExprienceFromDate2.getDate() + "/" + customExprienceFromDate2.getFullYear());
+                    }
+                    if (listOfCandidateInfo.ExperienceToDate2 != null) {
+                        var exToDate2 = listOfCandidateInfo.ExperienceToDate2;
+                        var trickString2 = exToDate2.substring(6);
+                        var trickNumber2 = parseInt(trickString2);
+                        var customExprienceToDate2 = new Date(trickNumber2);
+                        $("#experienceToDate2").val((customExprienceToDate2.getMonth() + 1) + "/" + customExprienceToDate2.getDate() + "/" + customExprienceToDate2.getFullYear());
+                    }
+                    $("#experienceAchievement2").val(listOfCandidateInfo.ExperienceAchievement2);
+
+                    if (listOfCandidateInfo.ExperienceOrganization3 != null) {
+                        $("#forthExprience").show();
+                        $("#showFifthExprience").show();
+                        $("#showForthExprience").hide();
+                    }
+
+
+                    $("#experienceOrganization3").val(listOfCandidateInfo.ExperienceOrganization3);
+                    $("#experienceOrganizationAddress3").val(listOfCandidateInfo.ExperienceOrganizationAddress3);
+                    $("#experienceDesignation3").val(listOfCandidateInfo.ExperienceDesignation3);
+                    $("#experienceDepartment3").val(listOfCandidateInfo.ExperienceDepartment3);
+                    if (listOfCandidateInfo.ExperienceFromDate3 != null) {
+                        var exFromDate3 = listOfCandidateInfo.ExperienceFromDate3;
+                        var trickString3 = exFromDate3.substring(6);
+                        var trickNumber3 = parseInt(trickString3);
+                        var customExprienceFromDate3 = new Date(trickNumber3);
+                        $("#experienceFromDate3").val((customExprienceFromDate3.getMonth() + 1) + "/" + customExprienceFromDate3.getDate() + "/" + customExprienceFromDate3.getFullYear());
+                    }
+                    if (listOfCandidateInfo.ExperienceToDate3 != null) {
+                        var exToDate3 = listOfCandidateInfo.ExperienceToDate3;
+                        var trickString3 = exToDate3.substring(6);
+                        var trickNumber3 = parseInt(trickString3);
+                        var customExprienceToDate3 = new Date(trickNumber3);
+                        $("#experienceToDate3").val((customExprienceToDate3.getMonth() + 1) + "/" + customExprienceToDate3.getDate() + "/" + customExprienceToDate3.getFullYear());
+                    }
+                    $("#experienceAchievement3").val(listOfCandidateInfo.ExperienceAchievement3);
+
+                    if (listOfCandidateInfo.ExperienceOrganization4 != null) {
+                        $("#fifthExprience").show();
+                        //$("#showFifthExprience").show();
+                        $("#showFifthExprience").hide();
+                    }
+
+                    $("#experienceOrganization4").val(listOfCandidateInfo.ExperienceOrganization4);
+                    $("#experienceOrganizationAddress4").val(listOfCandidateInfo.ExperienceOrganizationAddress4);
+                    $("#experienceDesignation4").val(listOfCandidateInfo.ExperienceDesignation4);
+                    $("#experienceDepartment4").val(listOfCandidateInfo.ExperienceDepartment4);
+                    if (listOfCandidateInfo.ExperienceFromDate4 != null) {
+                        var exFromDate4 = listOfCandidateInfo.ExperienceFromDate4;
+                        var trickString4 = exFromDate3.substring(6);
+                        var trickNumber4 = parseInt(trickString4);
+                        var customExprienceFromDate4 = new Date(trickNumber4);
+                        $("#experienceFromDate4").val((customExprienceFromDate4.getMonth() + 1) + "/" + customExprienceFromDate4.getDate() + "/" + customExprienceFromDate4.getFullYear());
+                    }
+                    if (listOfCandidateInfo.ExperienceToDate4 != null) {
+                        var exToDate3 = listOfCandidateInfo.ExperienceToDate4;
+                        var trickString4 = exToDate4.substring(6);
+                        var trickNumber4 = parseInt(trickString4);
+                        var customExprienceToDate4 = new Date(trickNumber4);
+                        $("#experienceToDate4").val((customExprienceToDate4.getMonth() + 1) + "/" + customExprienceToDate4.getDate() + "/" + customExprienceToDate4.getFullYear());
+                    }
+                    $("#experienceAchievement4").val(listOfCandidateInfo.ExperienceAchievement4);
+
+                    $("#computerSkill_MSWord").prop('checked', listOfCandidateInfo.ComputerSkill_MSWord);
+                    $("#computerSkill_MSPPoint").prop('checked', listOfCandidateInfo.ComputerSkill_MSPPoint);
+                    $("#computerSkill_MSExcel").prop('checked', listOfCandidateInfo.ComputerSkill_MSExcel);
+                    $("#computerSkill_MobileApp").prop('checked', listOfCandidateInfo.ComputerSkill_MobileApp);
+                    $("#computerSkill_ERP").prop('checked', listOfCandidateInfo.ComputerSkill_ERP);
+
+                    $("#extracurricularActivities").val(listOfCandidateInfo.ExtracurricularActivities);
+
+                    $("#ReferenceName1").val(listOfCandidateInfo.ReferenceName1);
+                    $("#ReferenceOrgNAddress1").val(listOfCandidateInfo.ReferenceOrgNAddress1);
+                    $("#ReferenceDesignation1").val(listOfCandidateInfo.ReferenceDesignation1);
+                    $("#ReferenceContactNo1").val(listOfCandidateInfo.ReferenceContactNo1);
+                    $("#ReferenceEmail1").val(listOfCandidateInfo.ReferenceEmail1);
+                    $("#ReferenceRelation1").val(listOfCandidateInfo.ReferenceRelation1);
+
+                    $("#ReferenceName2").val(listOfCandidateInfo.ReferenceName2);
+                    $("#ReferenceOrgNAddress2").val(listOfCandidateInfo.ReferenceOrgNAddress2);
+                    $("#ReferenceDesignation2").val(listOfCandidateInfo.ReferenceDesignation2);
+                    $("#ReferenceContactNo2").val(listOfCandidateInfo.ReferenceContactNo2);
+                    $("#ReferenceEmail2").val(listOfCandidateInfo.ReferenceEmail2);
+                    $("#ReferenceRelation2").val(listOfCandidateInfo.ReferenceRelation2);
+
+
+
+                    $("#image_upload_preview").attr('src', 'data:image/jpg;base64,' + listOfCandidateInfo.ShowImage);
+                    
+
+                },
+                error: function (data) {
+                    alert("Have no information in our record");
+                }
+
+            })
+
+        });
+
+        $("#searchNID").keyup(function (event) {
+            var copyNID = $(this).val();
+            $("#nationalID").val(copyNID);
+        });
+        $("#searchMobileNo").keyup(function (event) {
+            var copyMobileNo = $(this).val();
+            $("#preMobileNo").val(copyMobileNo);
+        });
+
+        $("#showMsc").click(function () {
+            $("#mscRow").show();
+            $(this).hide();
+            $("#showOthers").show();
+        });
+
+        $("#showOthers").click(function () {
+            $("#othersRow").show();
+            $(this).hide();
+        });
+
+        $("#showThirdExprience").click(function () {
+            $("#thirdExprience").show();
+            $("#showForthExprience").show();
+            $(this).hide();
+        });
+        $("#showForthExprience").click(function () {
+            $("#forthExprience").show();
+            $("#showFifthExprience").show();
+            $(this).hide();
+        });
+        $("#showFifthExprience").click(function () {
+            $("#fifthExprience").show();
+            //$("#showFifthExprience").show();
+            $(this).hide();
+        });
+
+        $("#showThirdTraining").click(function () {
+            $("#thirdTraining").show();
+            $("#showForthTraining").show();
+            $(this).hide();
+        });
+        $("#showForthTraining").click(function () {
+            $("#forthTraining").show();
+            $("#showFifthTraining").show();
+            $(this).hide();
+        });
+        $("#showFifthTraining").click(function () {
+            $("#fifthTraining").show();
+            //$("#showFifthTraining").show();
+            $(this).hide();
+        });
+
+
+        $("#sscResult").on("change", function () {
+            if ($("#sscResult").val() == "1ST") {
+                $("#sscGrade").prop('disabled', true);
+                $("#outOfText").prop('disabled', true);
+                $("#sscOutOf").prop('disabled', true);
+                $("#sscGrade").val("");
+                $("#sscOutOf").val("");
+                //sscGrade outOfText sscOutOf
+            } else if ($("#sscResult").val() == "2ND") {
+                $("#sscGrade").prop('disabled', true);
+                $("#outOfText").prop('disabled', true);
+                $("#sscOutOf").prop('disabled', true);
+                $("#sscGrade").val("");
+                $("#sscOutOf").val("");
+            }
+            else if ($("#sscResult").val() == "3RD") {
+                $("#sscGrade").prop('disabled', true);
+                $("#outOfText").prop('disabled', true);
+                $("#sscOutOf").prop('disabled', true);
+                $("#sscGrade").val("");
+                $("#sscOutOf").val("");
+            }
+            else if ($("#sscResult").val() == "GRD") {
+                $("#sscGrade").prop('disabled', false);
+                $("#outOfText").prop('disabled', false);
+                $("#sscOutOf").prop('disabled', false);
+            }
+            else if ($("#sscResult").val() == "") {
+                
+                $("#sscGrade").prop('disabled', true);
+                $("#outOfText").prop('disabled', true);
+                $("#sscOutOf").prop('disabled', true);
+            }
+        })
+        $("#sscGrade").keypress(
+             function (e) {
+                 if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57) && e.which != 46) {                    
+
+                     return false;
+                 }
+             }
+     );
+
+
+        $("#hscOrEquResult").on("change", function () {
+            if ($("#hscOrEquResult").val() == "1ST") {
+                $("#hscGrade").prop('disabled', true);
+                $("#hscOutOfText").prop('disabled', true);
+                $("#hscOutOf").prop('disabled', true);
+                $("#hscGrade").val("");
+                $("#hscOutOf").val("");
+                
+            } else if ($("#hscOrEquResult").val() == "2ND") {
+                $("#hscGrade").prop('disabled', true);
+                $("#hscOutOfText").prop('disabled', true);
+                $("#hscOutOf").prop('disabled', true);
+                $("#hscGrade").val("");
+                $("#hscOutOf").val("");
+            }
+            else if ($("#hscOrEquResult").val() == "3RD") {
+                $("#hscGrade").prop('disabled', true);
+                $("#hscOutOfText").prop('disabled', true);
+                $("#hscOutOf").prop('disabled', true);
+                $("#hscGrade").val("");
+                $("#hscOutOf").val("");
+            }
+            else if ($("#hscOrEquResult").val() == "GRD") {
+                $("#hscGrade").prop('disabled', false);
+                $("#hscOutOfText").prop('disabled', false);
+                $("#hscOutOf").prop('disabled', false);
+            }
+            else if ($("#hscOrEquResult").val() == "") {
+                $("#hscGrade").prop('disabled', true);
+                $("#hscOutOfText").prop('disabled', true);
+                $("#hscOutOf").prop('disabled', true);
+            }
+        })
+        $("#hscGrade").keypress(
+               function (e) {
+                   if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57) && e.which != 46) {
+                       return false;
+                   }
+               }
+       );
+        $("#bscOrEquResult").on("change", function () {
+            if ($("#bscOrEquResult").val() == "1ST") {
+                $("#bscGrade").prop('disabled', true);
+                $("#bscOutOfText").prop('disabled', true);
+                $("#bscOutOf").prop('disabled', true);
+
+                $("#bscGrade").val("");
+                $("#bscOutOf").val("");                
+            } else if ($("#bscOrEquResult").val() == "2ND") {
+                $("#bscGrade").prop('disabled', true);
+                $("#bscOutOfText").prop('disabled', true);
+                $("#bscOutOf").prop('disabled', true);
+                $("#bscGrade").val("");
+                $("#bscOutOf").val("");
+            }
+            else if ($("#bscOrEquResult").val() == "3RD") {
+                $("#bscGrade").prop('disabled', true);
+                $("#bscOutOfText").prop('disabled', true);
+                $("#bscOutOf").prop('disabled', true);
+                $("#bscGrade").val("");
+                $("#bscOutOf").val("");
+            }
+            else if ($("#bscOrEquResult").val() == "GRD") {
+                $("#bscGrade").prop('disabled', false);
+                $("#bscOutOfText").prop('disabled', false);
+                $("#bscOutOf").prop('disabled', false);
+            }
+            else if ($("#bscOrEquResult").val() == "") {
+                $("#bscGrade").prop('disabled', true);
+                $("#bscOutOfText").prop('disabled', true);
+                $("#bscOutOf").prop('disabled', true);
+            }
+        })
+        $("#bscGrade").keypress(
+          function (e) {
+              if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57) && e.which != 46) {                  
+                  return false;
+              }
+          }
+          );
+        $("#mscOrEquResult").on("change", function () {
+            if ($("#mscOrEquResult").val() == "1ST") {
+                $("#mscGrade").prop('disabled', true);
+                $("#mscOutOfText").prop('disabled', true);
+                $("#mscOutOf").prop('disabled', true);
+
+                $("#mscGrade").val("");
+                $("#mscOutOf").val("");                
+            } else if ($("#mscOrEquResult").val() == "2ND") {
+                $("#mscGrade").prop('disabled', true);
+                $("#mscOutOfText").prop('disabled', true);
+                $("#mscOutOf").prop('disabled', true);
+                $("#mscGrade").val("");
+                $("#mscOutOf").val("");
+            }
+            else if ($("#mscOrEquResult").val() == "3RD") {
+                $("#mscGrade").prop('disabled', true);
+                $("#mscOutOfText").prop('disabled', true);
+                $("#mscOutOf").prop('disabled', true);
+                $("#mscGrade").val("");
+                $("#mscOutOf").val("");
+            }
+            else if ($("#mscOrEquResult").val() == "GRD") {
+                $("#mscGrade").prop('disabled', false);
+                $("#mscOutOfText").prop('disabled', false);
+                $("#mscOutOf").prop('disabled', false);
+            }
+            else if ($("#mscOrEquResult").val() == "") {
+                $("#mscGrade").prop('disabled', true);
+                $("#mscOutOfText").prop('disabled', true);
+                $("#mscOutOf").prop('disabled', true);
+            }
+        })
+        $("#mscGrade").keypress(
+          function (e) {
+              if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57) && e.which != 46) {                  
+                  return false;
+              }
+          }
+        );
+
+        $("#othersResult").on("change", function () {
+            if ($("#othersResult").val() == "1ST") {
+                $("#othersGrade").prop('disabled', true);
+                $("#othersOutOfText").prop('disabled', true);
+                $("#othersOutOf").prop('disabled', true);
+
+                $("#othersGrade").val("");
+                $("#othersOutOf").val("");                
+            } else if ($("#othersResult").val() == "2ND") {
+                $("#othersGrade").prop('disabled', true);
+                $("#othersOutOfText").prop('disabled', true);
+                $("#othersOutOf").prop('disabled', true);
+                $("#othersGrade").val("");
+                $("#othersOutOf").val("");
+            }
+            else if ($("#othersResult").val() == "3RD") {
+                $("#othersGrade").prop('disabled', true);
+                $("#othersOutOfText").prop('disabled', true);
+                $("#othersOutOf").prop('disabled', true);
+                $("#othersGrade").val("");
+                $("#othersOutOf").val("");
+            }
+            else if ($("#othersResult").val() == "GRD") {
+                $("#othersGrade").prop('disabled', false);
+                $("#othersOutOfText").prop('disabled', false);
+                $("#othersOutOf").prop('disabled', false);
+            }
+            else if ($("#othersResult").val() == "") {
+                $("#othersGrade").prop('disabled', true);
+                $("#othersOutOfText").prop('disabled', true);
+                $("#othersOutOf").prop('disabled', true);
+            }
+        })
+        $("#othersGrade").keypress(
+                function (e) {
+                    if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57) && e.which != 46) {                        
+
+                        return false;
+                    }
+                }
+            );
+
+        // here is success or fail msg
+        var successOrFaildMsg = $("#successMsg").html();
+        var success = successOrFaildMsg.substring(0, 12);
+        var faild = successOrFaildMsg.substring(0, 11);
+        var unableToUpdate = successOrFaildMsg.substring(0, 19)
+
+        if (successOrFaildMsg == "") {
+            $("#successMsg").hide();
+        }
+        else if (success == "Save Success") {            
+            $("#successMsg").css({ 'color': '#3EB249' });
+            alert(successOrFaildMsg);
+        }
+        else if (faild == "Update Fail") {            
+            $("#successMsg").css({ 'color': '#9A1B1E' });
+            alert(successOrFaildMsg);
+        }
+        else if (unableToUpdate == "Your CV is submited") {            
+            $("#successMsg").css({ 'color': '#9A1B1E' });
+            alert(successOrFaildMsg);
+        }
+
+
+        $('#careerObjective').keyup(function () {
+            var max = 400;
+            var len = $(this).val().length;
+            if (len >= max) {
+                $('#careerObjectiveCharacter').text(' You have reached the limit.').css('color', '#ff0000');
+            } else {
+                var char = max - len;
+                $('#careerObjectiveCharacter').text(char + ' Characters left.').css('color', '#15C23C');
+            }
+        });
+        $('#computerSkill').keyup(function () {
+            var max = 150;
+            var len = $(this).val().length;
+            if (len >= max) {
+                $('#computerSkillCharacter').text(' You have reached the limit.').css('color', '#ff0000');
+
+            } else {
+                var char = max - len;
+                $('#computerSkillCharacter').text(char + ' Characters left.').css('color', '#15C23C');
+            }
+        });
+
+        $('#languageAbility').keyup(function () {
+            var max = 150;
+            var len = $(this).val().length;
+            if (len >= max) {
+                $('#languageAbilityCharacter').text(' You have reached the limit.').css('color', '#ff0000');
+
+            } else {
+                var char = max - len;
+                $('#languageAbilityCharacter').text(char + ' Characters left.').css('color', '#15C23C');
+            }
+        });
+
+        $('#extracurricularActivities').keyup(function () {
+            var max = 250;
+            var len = $(this).val().length;
+            if (len >= max) {
+                $('#extracurricularActivitiesCharacter').text(' You have reached the limit.').css('color', '#ff0000');
+            } else {
+                var char = max - len;
+                $('#extracurricularActivitiesCharacter').text(char + ' Characters left.').css('color', '#15C23C');
+            }
+        });
+
+        $('#interest_Hobby').keyup(function () {
+            var max = 150;
+            var len = $(this).val().length;
+            if (len >= max) {
+                $('#interest_HobbyCharacter').text(' You have reached the limit.').css('color', '#ff0000');
+
+            } else {
+                var char = max - len;
+                $('#interest_HobbyCharacter').text(char + ' Characters left.').css('color', '#15C23C');
+            }
+        });
+
+        $('#careerSummery1').keyup(function () {
+            var max = 500;
+            var len = $(this).val().length;
+            if (len >= max) {
+                $('#careerSummery1Character').text(' You have reached the limit.').css('color', '#ff0000');
+            } else {
+                var char = max - len;
+                $('#careerSummery1Character').text(char + ' Characters left.').css('color', '#15C23C');
+            }
+        });
+
+        $("#inputName").keypress(
+       function isAlfa(evt) {
+           evt = (evt) ? evt : window.event;
+           var charCode = (evt.which) ? evt.which : evt.keyCode;
+           if (charCode > 31 && (charCode < 65 || charCode > 90) && (charCode < 97 || charCode > 122) && charCode != 46 && charCode != 32 && charCode != 37 && charCode != 39) {
+               return false;
+           }
+           return true;
+       }
+   );
+        $("#fathersName").keypress(
+               function isAlfa(evt) {
+                   evt = (evt) ? evt : window.event;
+                   var charCode = (evt.which) ? evt.which : evt.keyCode;
+                   if (charCode > 31 && (charCode < 65 || charCode > 90) && (charCode < 97 || charCode > 122) && charCode != 46 && charCode != 32 && charCode != 37 && charCode != 39) {
+                       return false;
+                   }
+                   return true;
+               }
+            );
+        $("#mothersName").keypress(
+            function isAlfa(evt) {
+                evt = (evt) ? evt : window.event;
+                var charCode = (evt.which) ? evt.which : evt.keyCode;
+                if (charCode > 31 && (charCode < 65 || charCode > 90) && (charCode < 97 || charCode > 122) && charCode != 46 && charCode != 32 && charCode != 37 && charCode != 39) {
+                    return false;
+                }
+                return true;
+            }
+        );
+
+        $("#searchNID").keypress(
+                  function (e) {
+                      if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+                          return false;
+                      }
+                  }
+                );
+        $("#searchMobileNo").keypress(
+                function (e) {
+                    if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+                        return false;
+                    }
+                }
+              );
+
+        $("#nationalID").keypress(
+                  function (e) {
+                      if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+                          return false;
+                      }
+                  }
+                );
+        $("#preMobileNo").keypress(
+            function (e) {
+                if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+                    return false;
+                }
+            }
+            );
+        $("#preHomePhoneNo").keypress(
+                function (e) {
+                    if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+                        return false;
+                    }
+                }
+                );
+        $("#perMobileNo").keypress(
+            function (e) {
+                if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+                    return false;
+                }
+            }
+            );
+        $("#perHomePhoneNo").keypress(
+            function (e) {
+                if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+                    return false;
+                }
+            }
+            );
+        $("#sscPassingYear").keypress(
+           function (e) {
+               if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+                   return false;
+               }
+           }
+           );
+        $("#hscOrEquPassingYear").keypress(
+          function (e) {
+              if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+
+                  return false;
+              }
+          }
+          );
+        $("#bscOrEquPassingYear").keypress(
+        function (e) {
+            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+
+                return false;
+            }
+        }
+        );
+        $("#mscOrEquPassingYear").keypress(
+      function (e) {
+          if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+
+              return false;
+          }
+      }
+      );
+        $("#othersPassingYear").keypress(
+    function (e) {
+        if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+            return false;
+        }
+    }
+    );
+
+
+        $("#dateOfBirth").datepicker({
+
+            yearRange: "1980:2020",
+            changeYear: true,
+            dateFormat: "mm/dd/yy"
+        });
+
+        $("#applicationDate").datepicker({
+            yearRange: "2000:2020",
+            changeYear: true,
+            dateFormat: "mm/dd/yy"
+        });
+
+        $("#experienceFromDate").datepicker({
+            yearRange: "2000:2020",
+            changeYear: true,
+            dateFormat: "mm/dd/yy"
+        });
+        $("#experienceToDate").datepicker({
+            yearRange: "2000:2020",
+            changeYear: true,
+            dateFormat: "mm/dd/yy"
+        });
+        $("#experienceFromDate1").datepicker({
+            yearRange: "2000:2020",
+            changeYear: true,
+            dateFormat: "mm/dd/yy"
+        });
+        $("#experienceToDate1").datepicker({
+            yearRange: "2000:2020",
+            changeYear: true,
+            dateFormat: "mm/dd/yy"
+        });
+        $("#experienceFromDate2").datepicker({
+            yearRange: "2000:2020",
+            changeYear: true,
+            dateFormat: "mm/dd/yy"
+        });
+        $("#experienceToDate2").datepicker({
+            yearRange: "2000:2020",
+            changeYear: true,
+            dateFormat: "mm/dd/yy"
+        });
+        $("#experienceFromDate3").datepicker({
+            yearRange: "2000:2020",
+            changeYear: true,
+            dateFormat: "mm/dd/yy"
+        });
+        $("#experienceToDate3").datepicker({
+            yearRange: "2000:2020",
+            changeYear: true,
+            dateFormat: "mm/dd/yy"
+        });
+        $("#experienceFromDate4").datepicker({
+            yearRange: "2000:2020",
+            changeYear: true,
+            dateFormat: "mm/dd/yy"
+        });
+        $("#experienceToDate4").datepicker({
+            yearRange: "2000:2020",
+            changeYear: true,
+            dateFormat: "mm/dd/yy"
+        });
+
+
+
+    });
+
+
+    $("#inputfile").on('change', function () {
+
+
+
+        var ext = $('#inputfile').val().split('.').pop().toLowerCase();
+        if ($.inArray(ext, ['gif', 'png', 'jpg', 'jpeg']) == -1) {
+            alert("please enter a [.gif, .jpg, or .jpeg] formate image");
+            $('#inputfile').val("");
+            $('#image_upload_preview').attr('src', "");
+            return false;
+        };
+
+        //check whether browser fully supports all File API
+        if (window.File && window.FileReader && window.FileList && window.Blob) {
+            //get the file size and file type from file input field
+            var fsize = $('#inputfile')[0].files[0].size;
+
+            if (fsize > 204800) //file size checking
+            {
+                $('#inputfile').val("");
+                $('#image_upload_preview').attr('src', "");
+                alert("File Size Is Not valid");
+                return false;
+            }
+            else {
+                if ($('#inputfile')[0].files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        $('#image_upload_preview').attr('src', e.target.result);
+                    }
+                    reader.readAsDataURL($('#inputfile')[0].files[0]);
+                }
+            }
+        }
+        else {
+            alert("Please upgrade your browser, because your current browser lacks some new features we need!");
+        }
+    });
+
+    $("#formSubmit").on('click', function () {        
+
+        var appliedPosition = $("#appliedPosition").val();
+        var name = $("#inputName").val();
+        var fatherName = $("#fathersName").val();
+        var motherName = $("#mothersName").val();
+        var dateOfBirth = $("#dateOfBirth").val();
+        var ddlGender = $("#ddlGender").val();
+        var ddlMaritalStatus = $("#ddlMaritalStatus").val();
+        var ddlreligion = $("#ddlreligion").val();
+        var ddlNationality = $("#ddlNationality").val();
+        var emailAddress = $("#emailAddress").val();        
+        var nationalID = $("#nationalID").val();
+        
+        var preferenceAnyWhere = $("#preferenceAnyWhere").is(":checked");
+        var PreferenceNumber1 = $("#PreferenceNumber1").val();
+        var PreferenceNumber2 = $("#PreferenceNumber2").val();
+        var PreferenceNumber3 = $("#PreferenceNumber3").val();
+
+        var sscDegreeName = $("#sscDegreeName").val();
+        var sscSubject = $("#sscSubject").val();
+        var sscBoard = $("#sscBoard").val();
+        var sscInstName = $("#sscInstName").val();
+        var sscPassingYear = $("#sscPassingYear").val();
+        var sscResult = $("#sscResult").val();
+
+
+        
+        var preVillageOrStreet = $("#preVillageOrStreet").val();
+        var prePostOffice = $("#prePostOffice").val();
+        var prePoliceStation = $("#prePoliceStation").val();
+        var preDivision = $("#preDivision").val();
+        var preDistrict = $("#preDistrict").val();        
+        var preMobileNo = $("#preMobileNo").val();      
+
+
+        
+        var perVillageOrStreet = $("#perVillageOrStreet").val();
+        var perPostOffice = $("#perPostOffice").val();
+        var perPoliceStation = $("#perPoliceStation").val();
+        var perDivision = $("#perDivision").val();
+        var perDistrict = $("#perDistrict").val();       
+
+        var ReferenceName1 = $("#ReferenceName1").val();
+        var ReferenceOrgNAddress1 = $("#ReferenceOrgNAddress1").val();
+        var ReferenceDesignation1 = $("#ReferenceDesignation1").val();
+        var ReferenceContactNo1 = $("#ReferenceContactNo1").val();
+        var ReferenceEmail1 = $("#ReferenceEmail1").val();
+        var ReferenceRelation1 = $("#ReferenceRelation1").val();
+
+        var ReferenceName2 = $("#ReferenceName2").val();
+        var ReferenceOrgNAddress2 = $("#ReferenceOrgNAddress2").val();
+        var ReferenceDesignation2 = $("#ReferenceDesignation2").val();
+        var ReferenceContactNo2 = $("#ReferenceContactNo2").val();
+        var ReferenceEmail2 = $("#ReferenceEmail2").val();
+        var ReferenceRelation2 = $("#ReferenceRelation2").val();
+
+
+        if ($("#sourceOfJobInfo").val() == "") {
+            alert("Please select sources of job info.");
+            return false;
+        }
+        if (appliedPosition == "") {
+            alert("Please select an applied position");
+            return false;
+        }
+        if (name == "") {
+            alert("Please Enter your name");
+            return false;
+        }
+        if (fatherName == "") {
+            alert("Please Enter your Father's Name");
+            return false;
+        }
+        if (motherName == "") {
+            alert("Please Enter your Mother's Name");
+            return false;
+        }
+
+        if (dateOfBirth == "") {
+            alert("Please Enter your Date of Birth");
+            return false;
+        }
+        if (ddlGender == "") {
+            alert("Please Enter your gender");
+            return false;
+        }
+
+        if (ddlMaritalStatus == "") {
+            alert("Please Enter your marital status");
+            return false;
+        }
+        if (ddlreligion == "") {
+            alert("Please Enter your religion");
+            return false;
+        }
+        if (ddlNationality == "") {
+            alert("Please Enter your natinality");
+            return false;
+        }
+
+        if (emailAddress == "") {
+            alert("Please Enter your email address");
+            return false;
+        }
+ 
+        if (nationalID == "") {
+            alert("Please Enter your national id number");
+            return false;
+        }
+              
+        if (preferenceAnyWhere == false)
+        {
+            if (PreferenceNumber1 == "") {
+                alert("Please Enter your Preferred Job Location");
+                return false;
+            }
+              
+        }
+
+        if (preVillageOrStreet == "") {
+            alert("Please Enter your present village or street");
+            return false;
+        }
+        if (prePostOffice == "") {
+            alert("Please Enter your present Post Office");
+            return false;
+        }
+        if (prePoliceStation == "") {
+            alert("Please Enter your  present police station name");
+            return false;
+        }
+        if (preDivision == "") {
+            alert("Please Enter your present division name");
+            return false;
+        }
+        if (preDistrict == "") {
+            alert("Please Enter your present district name");
+            return false;
+        }
+        
+        if (preMobileNo == "") {
+            alert("Please Enter your contact no");
+            return false;
+        }
+       
+
+        if (perVillageOrStreet == "") {
+            alert("Please Enter your permanent village or street");
+            return false;
+        }
+        if (perPostOffice == "") {
+            alert("Please Enter your permanent Post Office");
+            return false;
+        }
+
+        if (perPoliceStation == "") {
+            alert("Please Enter your  permanent police station name");
+            return false;
+        }
+        if (perDivision == "") {
+            alert("Please Enter your permanent division name");
+            return false;
+        }
+
+        if (perDistrict == "") {
+            alert("Please Enter your permanent district");
+            return false;
+        }
+        
+
+        if (sscDegreeName == "") {
+            alert("Please Enter your ssc or equivalent degree name");
+            return false;
+        }
+        if (sscSubject == "") {
+            alert("Please Enter your ssc or equivalent degree subject name");
+            return false;
+        }
+        if (sscBoard == "") {
+            alert("Please Enter your ssc or equivalent degree board name");
+            return false;
+        }
+        if (sscInstName == "") {
+            alert("Please Enter your ssc or equivalent degree institute name");
+            return false;
+        }
+        if (sscPassingYear == "") {
+            alert("Please Enter your ssc or equivalent degree passing year");
+            return false;
+        }
+        if (sscResult == "") {
+            alert("Please Enter your ssc or equivalent degree result");
+            return false;
+        }
+        if (sscResult == "GRD")
+        {
+            if ($("#sscGrade").val() == "")
+            {
+                alert("Please Enter your ssc or equivalent GPA/CGPA");
+                return false;
+            }
+            if ($("#sscOutOf").val() == "")
+            {
+                alert("Please Enter your ssc or equivalent out of GPA/CGPA");
+                return false;
+            }
+        }
+        if ($("#sscAchievement").val()=="") {
+            alert("Please Enter your ssc or equivalent degree achievement");
+            return false;
+        }
+
+        if ($("#hscOrEquDegree").val() == "") {
+            alert("Please Enter your hsc or equivalent degree name");
+            return false;
+        }
+        if ($("#hscOrEquSbject").val() == "") {
+            alert("Please Enter your hsc or equivalent degree subject name");
+            return false;
+        }
+        if ($("#hscEquBoardOrUniversity").val() == "") {
+            alert("Please Enter your hsc or equivalent degree board name");
+            return false;
+        }
+        if ($("#hscOrEquInstName").val() == "") {
+            alert("Please Enter your hsc or equivalent degree institute name");
+            return false;
+        }
+        if ($("#hscOrEquPassingYear").val() == "") {
+            alert("Please Enter your hsc or equivalent degree passing year name");
+            return false;
+        }
+        if ($("#hscOrEquResult").val() == "") {
+            alert("Please Enter your hsc or equivalent degree result");
+            return false;
+        }
+        if ($("#hscOrEquResult").val() == "GRD")
+        {
+            if ($("#hscGrade").val() == "") {
+                alert("Please Enter your hsc or equivalent degree GPA/CGPA");
+                return false;
+            }
+            if ($("#hscOutOf").val() == "") {
+                alert("Please Enter your hsc or equivalent degree out of GPA/CGPA");
+                return false;
+            }
+        }
+        
+        if ($("#hscAchievement1").val() == "") {
+            alert("Please Enter your hsc or equivalent degree achivement");
+            return false;
+        }
+
+        if ($("#bscOrEquDegreeName").val() == "") {
+            alert("Please Enter your graduation degree name");
+            return false;
+        }
+        if ($("#bscOrEquSubject").val() == "") {
+            alert("Please Enter your graduation degree subject name");
+            return false;
+        }
+        if ($("#bscOrEquBoard_University").val() == "") {
+            alert("Please Enter your graduation degree university name");
+            return false;
+        }
+        if ($("#bscOrEquInstName").val() == "") {
+            alert("Please Enter your graduation degree institute name");
+            return false;
+        }
+        if ($("#bscOrEquPassingYear").val() == "") {
+            alert("Please Enter your graduation degree passing year");
+            return false;
+        }
+        if ($("#bscOrEquResult").val() == "") {
+            alert("Please Enter your graduation degree result");
+            return false;
+        }
+        if ($("#bscOrEquResult").val() == "GRD")
+        {
+            if ($("#bscGrade").val() == "") {
+                alert("Please Enter your graduation degree GPA/CGPA");
+                return false;
+            }
+            if ($("#bscOutOf").val() == "") {
+                alert("Please Enter your graduation degree out of GPA/CGPA");
+                return false;
+            }
+        }
+       
+        if ($("#achievement2").val() == "") {
+            alert("Please Enter your graduation degree achievement");
+            return false;
+        }
+        
+
+        if ($("#computerSkill_MSWord").is(":checked") == false && $("#computerSkill_MSExcel").is(":checked") == false && $("#computerSkill_MSPPoint").is(":checked") == false && $("#computerSkill_MobileApp").is(":checked") == false && $("#computerSkill_ERP").is(":checked") == false) {
+            alert("Please Enter your Computer skill");
+            return false;
+        }
+
+
+        if (ReferenceName1 == "") {
+            alert("Please Enter first Reference Name");
+            return false;
+        }
+        if (ReferenceOrgNAddress1 == "") {
+            alert("Please Enter first Reference Organization name and Address");
+            return false;
+        }
+        if (ReferenceDesignation1 == "") {
+            alert("Please Enter first Reference Designation");
+            return false;
+        }
+        if (ReferenceContactNo1 == "") {
+            alert("Please Enter first Reference Contact no");
+            return false;
+        }
+        if (ReferenceEmail1 == "") {
+            alert("Please Enter first Reference Email");
+            return false;
+        }
+        if (ReferenceRelation1 == "") {
+            alert("Please Enter first Reference relation");
+            return false;
+        }
+        if (ReferenceName2 == "") {
+            alert("Please Enter second Reference name");
+            return false;
+        }
+        if (ReferenceOrgNAddress2 == "") {
+            alert("Please Enter second Reference organizaion name and address");
+            return false;
+        }
+        if (ReferenceDesignation2 == "") {
+            alert("Please Enter second Reference designation");
+            return false;
+        }
+        if (ReferenceContactNo2 == "") {
+            alert("Please Enter second Reference contact no");
+            return false;
+        }
+        if (ReferenceEmail2 == "") {
+            alert("Please Enter second Reference Email");
+            return false;
+        }
+        if (ReferenceRelation2 == "") {
+            alert("Please Enter second Reference Relation");
+            return false;
+        }
+
+        var imag = $("#image_upload_preview").attr('src');
+
+        if (imag == "" || imag=="data:image/jpg;base64,null")
+        {
+            alert("Please Enter your photo");
+            return false;
+        }
+
+        $("#isSumited").prop('checked', true);
+
+
+    })
+
+
+    function loadDistrict(Division) {
+        $.ajax({            
+            url: '@Url.Action("GetDistrictList", "Home")',
+            type: 'POST',
+            data: JSON.stringify({ Division: Division }),
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+            success: function (districtList) {
+                $('#perDistrict').get(0).options.length = 0;
+                $('#perDistrict').get(0).options[0] = new Option("--Select--", "");
+
+                $.map(districtList, function (item) {
+
+                    $('#perDistrict').get(0).options[$('#perDistrict').get(0).options.length] = new Option(item.DIST_NAME, item.DIST_CODE);
+                    $("#perDistrict").val($("#preDistrict").val());
+                });
+
+            },
+            error: function (data) {
+                alert("data is not load " + data);
+            }
+
+        });
+    }
+
+    function loadPresentDistrict(Division) {
+        $.ajax({            
+            url: '@Url.Action("GetDistrictList", "Home")',
+            type: 'POST',
+            data: JSON.stringify({ Division: Division }),
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+            success: function (districtList) {
+                $('#preDistrict').get(0).options.length = 0;
+                $('#preDistrict').get(0).options[0] = new Option("--Select--", "");
+
+                $.map(districtList, function (item) {
+
+                    $('#preDistrict').get(0).options[$('#preDistrict').get(0).options.length] = new Option(item.DIST_NAME, item.DIST_CODE);
+                });
+
+            },
+            error: function (data) {
+                alert("data is not load " + data);
+            }
+
+        });
+    }
+
+    function loadUpazila(District) {
+        $.ajax({
+
+            url: '@Url.Action("GetUpozilaList", "Home")',
+            type: 'POST',
+            data: JSON.stringify({ District: District }),
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+            success: function (upozilaList) {
+                $('#perUpozila').get(0).options.length = 0;
+                $('#perUpozila').get(0).options[0] = new Option("--Select--", "");
+
+                $.map(upozilaList, function (item) {
+
+                    $('#perUpozila').get(0).options[$('#perUpozila').get(0).options.length] = new Option(item.UPAZ_NAME, item.UPAZ_CODE);
+                    $("#perUpozila").val($("#preUpozila").val());
+                });
+            },
+            error: function (data) {
+                alert("data is not load " + data);
+            }
+
+        })
+    }
+
+    function loadPresentUpazila(District) {
+        $.ajax({
+
+            url: '@Url.Action("GetUpozilaList", "Home")',
+            type: 'POST',
+            data: JSON.stringify({ District: District }),
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+            success: function (upozilaList) {
+                $('#preUpozila').get(0).options.length = 0;
+                $('#preUpozila').get(0).options[0] = new Option("--Select--", "");
+
+                $.map(upozilaList, function (item) {
+
+                    $('#preUpozila').get(0).options[$('#preUpozila').get(0).options.length] = new Option(item.UPAZ_NAME, item.UPAZ_CODE);
+                });
+            },
+            error: function (data) {
+                alert("data is not load " + data);
+            }
+
+        })
+    }
+
+
+    function loadUnion(Upozila) {
+        $.ajax({
+            url: '@Url.Action("CommonUnionInfoList", "Home")',
+            type: 'POST',
+            data: JSON.stringify({ Upozila: Upozila }),
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+
+            success: function (unionList) {
+                $('#permanentUnionID').get(0).options.length = 0;
+                $('#permanentUnionID').get(0).options[0] = new Option("--Select--", "");
+
+                $.map(unionList, function (item) {
+
+                    $('#permanentUnionID').get(0).options[$('#permanentUnionID').get(0).options.length] = new Option(item.UnionName, item.UnionID);
+                    $("#permanentUnionID").val($("#presentUnionID").val());
+                });
+
+            },
+            error: function (data) {
+                alert("data is not load " + data);
+            }
+
+        })
+
+    }
+
+    function loadPresentUnion(Upozila) {
+        $.ajax({
+            url: '@Url.Action("CommonUnionInfoList", "Home")',
+            type: 'POST',
+            data: JSON.stringify({ Upozila: Upozila }),
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+
+            success: function (unionList) {
+                $('#presentUnionID').get(0).options.length = 0;
+                $('#presentUnionID').get(0).options[0] = new Option("--Select--", "");
+
+                $.map(unionList, function (item) {
+
+                    $('#presentUnionID').get(0).options[$('#presentUnionID').get(0).options.length] = new Option(item.UnionName, item.UnionID);
+                });
+
+            },
+            error: function (data) {
+                alert("data is not load " + data);
+            }
+
+        })
+
+    }
+
+    $("#sameAsPresent").on("change", function () {
+        var c = $(this).is(':checked') ? 1 : 0;
+        if (c == 1) {
+
+            $("#perHouseNo").val($("#preHouseNo").val());
+            $("#perVillageOrStreet").val($("#preVillageOrStreet").val());
+            $("#perPostOffice").val($("#prePostOffice").val());
+            $("#perPoliceStation").val($("#prePoliceStation").val());
+            $("#perDivision").val($("#preDivision").val());
+
+            loadDistrict($("#preDivision").val());
+            loadUpazila($("#preDistrict").val());
+            loadUnion($("#preUpozila").val());
+
+            $("#perMobileNo").val($("#preMobileNo").val());
+            $("#perHomePhoneNo").val($("#preHomePhoneNo").val());
+
+
+
+            $("#perHouseNo").prop('readonly', true);
+            $("#perVillageOrStreet").prop('readonly', true);
+            $("#perPostOffice").prop('readonly', true);
+            $("#perPoliceStation").prop('readonly', true);
+            $("#perDivision").attr('readonly', true);
+            $("#perDistrict").attr('readonly', true);
+            $("#perUpozila").attr('readonly', true);
+            $("#perHomePhoneNo").prop('readonly', true);
+            $("#perMobileNo").prop('readonly', true);
+            $("#permanentUnionID").attr('readonly', true);
+        }
+        else if (c == 0) {
+            $("#perHouseNo").val("");
+            $("#perVillageOrStreet").val("");
+            $("#perPostOffice").val("");
+            $("#perPoliceStation").val("");
+            $("#perDivision").val("");
+            $("#perDistrict").val("");
+            $("#perUpozila").val("");
+            $("#perHomePhoneNo").val("");
+            $("#perMobileNo").val("");
+            $("#permanentUnionID").val("");
+
+
+
+            $("#perHouseNo").prop('readonly', false);
+            $("#perVillageOrStreet").prop('readonly', false);
+            $("#perPostOffice").prop('readonly', false);
+            $("#perPoliceStation").prop('readonly', false);
+            $("#perDivision").attr('readonly', false);
+            $("#perDistrict").attr('readonly', false);
+            $("#perUpozila").attr('readonly', false);
+            $("#perHomePhoneNo").prop('readonly', false);
+            $("#perMobileNo").prop('readonly', false);
+            $("#permanentUnionID").attr('readonly', false);
+        }
+    })
+    $("#preDivision").on('change', function () {
+        var Division = $("#preDivision").val();
+        $.ajax({
+            
+            url: '@Url.Action("GetDistrictList", "Home")',
+            type: 'POST',
+            data: JSON.stringify({ Division: Division }),
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+            success: function (districtList) {
+                $('#preDistrict').get(0).options.length = 0;
+                $('#preDistrict').get(0).options[0] = new Option("--Select--", "");
+
+                $.map(districtList, function (item) {
+
+                    $('#preDistrict').get(0).options[$('#preDistrict').get(0).options.length] = new Option(item.DIST_NAME, item.DIST_CODE);
+                });
+
+            },
+            error: function (data) {
+                alert("data is not load " + data);
+            }
+
+        });
+    })
+
+    $("#preDistrict").on('change', function () {
+        var District = $("#preDistrict").val();
+
+        $.ajax({
+            
+            url: '@Url.Action("GetUpozilaList", "Home")',
+            type: 'POST',
+            data: JSON.stringify({ District: District }),
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+            
+            success: function (upozilaList) {
+                $('#preUpozila').get(0).options.length = 0;
+                $('#preUpozila').get(0).options[0] = new Option("--Select--", "");
+
+                $.map(upozilaList, function (item) {
+
+                    $('#preUpozila').get(0).options[$('#preUpozila').get(0).options.length] = new Option(item.UPAZ_NAME, item.UPAZ_CODE);
+                });
+
+
+            },
+            error: function (data) {
+                alert("data is not load " + data);
+            }
+        });
+    })
+
+    $("#perDivision").on('change', function () {
+        var Division = $("#perDivision").val();
+        $.ajax({
+            //url: '/Home/GetDistrictList',
+            url: '@Url.Action("GetDistrictList", "Home")',
+            type: 'POST',
+            data: JSON.stringify({ Division: Division }),
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+            success: function (districtList) {
+                $('#perDistrict').get(0).options.length = 0;
+                $('#perDistrict').get(0).options[0] = new Option("--Select--", "");
+
+                $.map(districtList, function (item) {
+
+                    $('#perDistrict').get(0).options[$('#perDistrict').get(0).options.length] = new Option(item.DIST_NAME, item.DIST_CODE);
+                });
+
+            },
+            error: function (data) {
+                alert("data is not load " + data);
+            }
+
+        });
+
+    })
+    $("#perDistrict").on('change', function () {
+        var District = $("#perDistrict").val();
+
+        $.ajax({
+            //url: '/Home/GetUpozilaList',
+            url: '@Url.Action("GetUpozilaList", "Home")',
+            type: 'POST',
+            data: JSON.stringify({ District: District }),
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+            //cache: false,
+            // dataType: "JSON",
+            success: function (upozilaList) {
+                $('#perUpozila').get(0).options.length = 0;
+                $('#perUpozila').get(0).options[0] = new Option("--Select--", "");
+
+                $.map(upozilaList, function (item) {
+
+                    $('#perUpozila').get(0).options[$('#perUpozila').get(0).options.length] = new Option(item.UPAZ_NAME, item.UPAZ_CODE);
+                });
+
+                //$("#preUpozila").html(""); // clear before appending new list
+                //$("#preUpozila").empty().append('<option selected="selected" value=""> Select Upozila </option>');
+
+                //$.each(upozilaList, function (i, aList) {
+                //    $("#preUpozila").append(
+                //        $('<option></option>').val(aList.UPAZ_CODE).html(aList.UPAZ_NAME));
+
+                //});
+            },
+            error: function (data) {
+                alert("data is not load " + data);
+            }
+
+        })
+
+    })
+
+    $("#preUpozila").on('change', function () {
+        var Upozila = $("#preUpozila").val();
+
+        $.ajax({
+            //url: '/Home/GetUpozilaList',
+            url: '@Url.Action("CommonUnionInfoList", "Home")',
+            type: 'POST',
+            data: JSON.stringify({ Upozila: Upozila }),
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+            //cache: false,
+            // dataType: "JSON",
+            success: function (unionList) {
+                $('#presentUnionID').get(0).options.length = 0;
+                $('#presentUnionID').get(0).options[0] = new Option("--Select--", "");
+
+                $.map(unionList, function (item) {
+
+                    $('#presentUnionID').get(0).options[$('#presentUnionID').get(0).options.length] = new Option(item.UnionName, item.UnionID);
+                });
+
+                //$("#preUpozila").html(""); // clear before appending new list
+                //$("#preUpozila").empty().append('<option selected="selected" value=""> Select Upozila </option>');
+
+                //$.each(upozilaList, function (i, aList) {
+                //    $("#preUpozila").append(
+                //        $('<option></option>').val(aList.UPAZ_CODE).html(aList.UPAZ_NAME));
+
+                //});
+            },
+            error: function (data) {
+                alert("data is not load " + data);
+            }
+
+        })
+
+    })
+
+    $("#perUpozila").on('change', function () {
+        var Upozila = $("#perUpozila").val();
+
+        $.ajax({
+            //url: '/Home/GetUpozilaList',
+            url: '@Url.Action("CommonUnionInfoList", "Home")',
+            type: 'POST',
+            data: JSON.stringify({ Upozila: Upozila }),
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+            //cache: false,
+            // dataType: "JSON",
+            success: function (unionList) {
+                $('#permanentUnionID').get(0).options.length = 0;
+                $('#permanentUnionID').get(0).options[0] = new Option("--Select--", "");
+
+                $.map(unionList, function (item) {
+
+                    $('#permanentUnionID').get(0).options[$('#permanentUnionID').get(0).options.length] = new Option(item.UnionName, item.UnionID);
+                });
+
+                //$("#preUpozila").html(""); // clear before appending new list
+                //$("#preUpozila").empty().append('<option selected="selected" value=""> Select Upozila </option>');
+
+                //$.each(upozilaList, function (i, aList) {
+                //    $("#preUpozila").append(
+                //        $('<option></option>').val(aList.UPAZ_CODE).html(aList.UPAZ_NAME));
+
+                //});
+            },
+            error: function (data) {
+                alert("data is not load " + data);
+            }
+
+        })
+
+    })
+
+    $.get("http://ipinfo.io", function (response) {
+        //$("#ip").html("IP: " + response.ip);
+        $("#trackingDistrictName").val(response.city);
+        //$("#details").html(JSON.stringify(response, null, 4));
+        //$("#locationName").val(response.city);
+
+    }, "jsonp");
+</script>
